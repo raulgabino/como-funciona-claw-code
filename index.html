@@ -1031,7 +1031,7 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
 
     <div class="callout fade-in">
       <div class="callout-label">Herramientas condicionales</div>
-      <p style="margin:0;">No todas las 45 herramientas estan siempre disponibles. <strong>SleepTool</strong> solo aparece en modo <span class="term" data-def="KAIROS es el modo proactivo de Claude Code donde el agente trabaja de forma autonoma sin input del usuario, con un tick loop continuo y un SleepTool obligatorio para pausar entre acciones.">KAIROS</span>. <strong>CronTools</strong> solo con AGENT_TRIGGERS habilitado. <strong>WebBrowserTool</strong> y <strong>MonitorTool</strong> son internos de Anthropic. Las herramientas se inyectan condicionalmente segun el contexto.</p>
+      <p style="margin:0;">No todas las 45 herramientas estan siempre disponibles. <strong>SleepTool</strong> solo aparece en modo <span class="term" data-def="KAIROS es el modo proactivo de Claude Code donde el agente trabaja de forma autonoma sin input del usuario, con un tick loop continuo y un SleepTool obligatorio para pausar entre acciones.">KAIROS</span>. <strong>CronTools</strong> solo con AGENT_TRIGGERS habilitado. <strong>REPLTool</strong> es exclusivo de Anthropic interno. <strong>WebBrowserTool</strong> y <strong>MonitorTool</strong> estan detras de feature flags. Las herramientas se inyectan condicionalmente segun el contexto.</p>
     </div>
   </div>
 </section>
@@ -1186,7 +1186,7 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <div class="chat-avatar" style="background:var(--accent)">M</div>
         <div class="chat-bubble">
           <div class="chat-name" style="color:var(--accent)">MicroCompact</div>
-          Ademas, limpie 12 resultados viejos de herramientas. Ahora dicen "[Old tool result cleared]".
+          Ademas, limpie 12 resultados viejos de herramientas. Ahora dicen "[Old tool result content cleared]".
         </div>
       </div>
       <div class="chat-msg" data-delay="2700">
@@ -1333,7 +1333,7 @@ Senior Go developer, nuevo en React.</pre>
       <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El chef que cocina solo de noche cuando el restaurante cierra. Revisa el inventario, prepara la masa para manana, limpia las estaciones. Pero tiene un <strong>reloj obligatorio</strong> — cada 30 minutos DEBE descansar. Si no, lo sacan de la cocina.</div>
     </div>
 
-    <p class="fade-in">KAIROS reemplaza el prompt default por uno de modo autonomo. En vez de esperar instrucciones del usuario, Claude ejecuta un <strong>tick loop</strong> continuo: revisa tareas, ejecuta, y duerme.</p>
+    <p class="fade-in">KAIROS es un <strong>modo experimental</strong> (no disponible en releases estandar) que reemplaza el prompt default por uno de modo autonomo. En vez de esperar instrucciones del usuario, Claude ejecuta un <strong>tick loop</strong> continuo: revisa tareas, ejecuta, y duerme.</p>
 
     <div class="steps fade-in">
       <div class="step">
@@ -1710,7 +1710,7 @@ Senior Go developer, nuevo en React.</pre>
     'micro-compactacion': 'La micro-compactacion reemplaza resultados viejos de herramientas con "[Old tool result content cleared]" para liberar espacio de contexto de forma incremental durante la sesion.',
     'CLAUDE.md': 'CLAUDE.md es un archivo de configuracion por proyecto que se inyecta en la capa 5 (default) del system prompt. Tiene mas prioridad que la memoria regular (capa 6) porque esta mas arriba en la jerarquia.',
     'MEMORY.md': 'MEMORY.md es el indice del sistema de memoria persistente. Contiene punteros a archivos de memoria individuales (user, feedback, project, reference) y se inyecta en la capa 6 (append) del system prompt.',
-    'KAIROS': 'KAIROS es el modo proactivo/autonomo de Claude Code donde el agente trabaja sin input del usuario, con un tick loop continuo y un SleepTool obligatorio para pausar entre acciones.',
+    'KAIROS': 'KAIROS es el modo proactivo/autonomo experimental de Claude Code (no disponible en releases estandar) donde el agente trabaja sin input del usuario, con un tick loop continuo y un SleepTool obligatorio para pausar entre acciones.',
     'SleepTool': 'SleepTool es una herramienta obligatoria en modo KAIROS que fuerza a Claude a pausar entre acciones autonomas. Es un circuit breaker por diseno — sin ella, el agente consumiria recursos infinitamente.',
     'MCP': 'MCP (Model Context Protocol) es un protocolo que permite conectar herramientas externas dinamicamente a Claude Code. Los servidores MCP exponen herramientas y recursos que se inyectan como tools adicionales.',
     'modo auto': 'El modo "auto" de permisos usa el YOLO classifier para decidir automaticamente si una accion es segura o debe bloquearse. Tiene patrones hardcoded siempre bloqueados (python, node, sudo, etc.).',
