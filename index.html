@@ -673,7 +673,7 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
 <!-- ==================== HERO ==================== -->
 <section class="hero module" id="mod-0">
   <div class="hero-inner">
-    <div class="hero-badge">50K ⭐ en 2 horas · Python + Rust</div>
+    <div class="hero-badge">207 comandos · 184 herramientas · Python + Rust</div>
     <h1>Cómo funciona<br><span class="accent">Claw Code</span><br>por dentro</h1>
     <p>Un curso interactivo para entender la ingeniería de un "harness" de agentes de IA — la maquinaria invisible que conecta herramientas, orquesta tareas y gestiona el contexto de runtime.</p>
     <p style="font-size:0.9rem; color:#8B7E6E;">Basado en el repositorio <code style="font-family:var(--font-mono);font-size:0.82rem;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;">instructkr/claw-code</code></p>
@@ -781,7 +781,7 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
   <div class="module-inner">
     <span class="mod-tag fade-in">Módulo 1</span>
     <h2 class="fade-in">¿Qué es Claw Code y<br>para qué sirve?</h2>
-    <p class="subtitle fade-in">Un <span class="term" data-def="Un 'clean-room rewrite' es cuando reconstruyes un software desde cero, sin copiar el código original, solo replicando su comportamiento observable. Es una práctica legal común en ingeniería de software.">clean-room rewrite</span> de los patrones arquitectónicos de Claude Code.</p>
+    <p class="subtitle fade-in">Un <span class="term" data-def="Un 'harness' (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo. Sin harness, el modelo solo puede responder texto.">harness</span> de agentes de IA — abierto, legible y construido para entender.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
@@ -792,28 +792,28 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <circle cx="34" cy="32" r="4" fill="#2A9D8F" opacity="0.4"/>
         <line x1="28" y1="22" x2="28" y2="42" stroke="#D94F30" stroke-width="1" stroke-dasharray="2 2" opacity="0.3"/>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Alguien vio un restaurante famoso desde afuera, entró a la cocina, tomó notas de cómo estaba organizada — y luego construyó su propia cocina desde cero, sin copiar las recetas. Eso es Claw Code.</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Este es un restaurante con 200 platillos en la carta. Tú solo ves la barra donde pides — pero detrás hay una cocina completa con roles, reglas y flujos definidos. Vamos a entender cómo funciona esa cocina.</div>
     </div>
 
-    <p class="fade-in">Imagina que Claude Code es un coche de carreras. Tú ves la interfaz — la terminal, los comandos, las respuestas. Pero debajo del capó hay un motor complejo: el <span class="term" data-def="Un 'harness' (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo. Sin harness, el modelo solo puede responder texto.">harness</span>.</p>
+    <p class="fade-in">Cuando usas un agente de IA como Claude Code, tú escribes un prompt y recibes una respuesta. Pero entre tu texto y la respuesta hay un sistema complejo: el <span class="term" data-def="Un 'harness' (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo. Sin harness, el modelo solo puede responder texto.">harness</span>. Es la maquinaria que decide qué herramientas usar, qué permisos revisar, y cómo gestionar la conversación.</p>
 
-    <p class="fade-in">Claw Code desarma ese motor pieza por pieza, lo reconstruye en Python puro, y ahora lo está portando a <span class="term" data-def="Rust es un lenguaje de programación que prioriza la seguridad de memoria y el rendimiento. Es ideal para sistemas de alta confiabilidad. Cuando escuches 'memory-safe', piensa en Rust.">Rust</span> para hacerlo más rápido y seguro.</p>
+    <p class="fade-in">Claw Code implementa esa maquinaria de forma abierta y legible — primero en Python, ahora también en <span class="term" data-def="Rust es un lenguaje de programación que prioriza la seguridad de memoria y el rendimiento. Es ideal para sistemas de alta confiabilidad. Cuando escuches 'memory-safe', piensa en Rust.">Rust</span> — lo que nos permite estudiar cómo funciona pieza por pieza.</p>
 
     <div class="cards fade-in">
       <div class="card">
-        <span class="card-icon">🔬</span>
-        <div class="card-title">Ingeniería inversa</div>
-        <div class="card-desc">Mapea los 207 comandos y 184 herramientas del Claude Code original como "snapshots" JSON.</div>
+        <span class="card-icon">🎯</span>
+        <div class="card-title">Routing de prompts</div>
+        <div class="card-desc">Cada prompt se tokeniza y se compara contra un catálogo de 207 comandos y 184 herramientas para encontrar la mejor acción.</div>
       </div>
       <div class="card">
-        <span class="card-icon">🔧</span>
-        <div class="card-title">No es una copia</div>
-        <div class="card-desc">Cada módulo es una reimplementación desde cero — los "shims" replican el comportamiento, no el código.</div>
+        <span class="card-icon">🔒</span>
+        <div class="card-title">Sistema de permisos</div>
+        <div class="card-desc">Antes de ejecutar cualquier herramienta, un gate de seguridad verifica que no sea peligrosa — con listas de bloqueo por nombre y por prefijo.</div>
       </div>
       <div class="card">
-        <span class="card-icon">🦀</span>
-        <div class="card-title">Rumbo a Rust</div>
-        <div class="card-desc">El port a Rust añade seguridad de memoria, streaming SSE nativo, y un cliente OAuth integrado.</div>
+        <span class="card-icon">⚡</span>
+        <div class="card-title">Turn loop con presupuesto</div>
+        <div class="card-desc">Cada turno de conversación se controla con un presupuesto de tokens y compactación automática de la historia.</div>
       </div>
     </div>
 
@@ -898,8 +898,8 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
           <div class="translation-line">que describe un módulo del codebase original:</div>
           <div class="translation-line">→ su nombre</div>
           <div class="translation-line">→ qué hace (su responsabilidad)</div>
-          <div class="translation-line">→ de dónde viene en el TypeScript original</div>
-          <div class="translation-line">→ su estado de porteo (por defecto: "planeado")</div>
+          <div class="translation-line">→ de qué parte del sistema viene</div>
+          <div class="translation-line">→ su estado actual (por defecto: "planeado")</div>
         </div>
       </div>
     </div>
@@ -943,7 +943,7 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-content"><strong>Context</strong> — Mapea el espacio de trabajo: cuántos archivos Python hay, si existe un archivo TypeScript original para comparar.</div>
+        <div class="step-content"><strong>Context</strong> — Mapea el espacio de trabajo: cuántos archivos hay, qué recursos están disponibles, y cuál es la estructura del proyecto.</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -1028,13 +1028,13 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
       <div class="restaurant-hook-text"><strong>En el restaurante:</strong> La carta impresa con los 200 platillos. No es una receta ejecutable — es un catálogo descriptivo. Cada mañana, el chef la memoriza para saber qué puede ofrecer.</div>
     </div>
 
-    <p class="fade-in">El directorio <code style="font-family:var(--font-mono);background:var(--bg-warm-alt);padding:2px 6px;border-radius:4px;">reference_data/</code> es la bodega del sistema. Contiene <span class="term" data-def="Un 'snapshot' es una fotografía del estado de un sistema en un momento dado. Los snapshots de Claw Code capturan los nombres, responsabilidades y ubicaciones de los 207 comandos y 184 herramientas del Claude Code original de TypeScript.">snapshots</span> del Claude Code original — no código copiado, sino un catálogo exhaustivo de lo que cada pieza hacía.</p>
+    <p class="fade-in">El directorio <code style="font-family:var(--font-mono);background:var(--bg-warm-alt);padding:2px 6px;border-radius:4px;">reference_data/</code> es la bodega del sistema. Contiene <span class="term" data-def="Un 'snapshot' es una fotografía del estado de un sistema en un momento dado. Los snapshots de Claw Code capturan los nombres, responsabilidades y ubicaciones de los 207 comandos y 184 herramientas del sistema.">snapshots</span> — un catálogo exhaustivo de cada comando y herramienta disponible, con su nombre, responsabilidad y ubicación.</p>
 
     <div class="cards fade-in">
       <div class="card">
         <span class="card-icon">📋</span>
         <div class="card-title">commands_snapshot.json</div>
-        <div class="card-desc">207 entradas de comandos mapeados desde los archivos TypeScript originales — add-dir, agents, autofix-pr, y más.</div>
+        <div class="card-desc">207 entradas de comandos disponibles — add-dir, agents, autofix-pr, bughunter, y más.</div>
       </div>
       <div class="card">
         <span class="card-icon">🔧</span>
@@ -1052,8 +1052,8 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
       <span class="file-label">// Ejemplo de una entrada en tools_snapshot.json</span>
 <pre>{
   <span class="fn">"name"</span>: <span class="st">"BashTool"</span>,
-  <span class="fn">"responsibility"</span>: <span class="st">"Tool module mirrored from archived TypeScript path tools/BashTool"</span>,
-  <span class="fn">"source_hint"</span>: <span class="st">"tools/BashTool.ts"</span>
+  <span class="fn">"responsibility"</span>: <span class="st">"Ejecuta comandos de shell en el entorno del usuario"</span>,
+  <span class="fn">"source_hint"</span>: <span class="st">"tools/BashTool"</span>
 }</pre>
     </div>
 
@@ -1328,7 +1328,7 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
       <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Empezaron con un <strong>food truck</strong> (Python — rápido de armar, funcional). Ahora están construyendo una <strong>cocina industrial de acero</strong> (Rust — imposible de contaminar, con certificaciones de seguridad integradas en la estructura).</div>
     </div>
 
-    <p class="fade-in">El port a Rust no es una traducción línea por línea — es una reimaginación con herramientas que Python no tiene: seguridad de memoria garantizada por el compilador, streaming SSE nativo, y un cliente OAuth completo.</p>
+    <p class="fade-in">El port a Rust no es una traducción línea por línea — es una versión optimizada con herramientas que Python no tiene: seguridad de memoria garantizada por el compilador, streaming SSE nativo, y un cliente OAuth completo.</p>
 
     <div class="cards fade-in">
       <div class="card">
@@ -1665,12 +1665,12 @@ resolver = <span class="st">"2"</span>
 
   // === GLOSSARY ===
   const GLOSSARY = {
-    'clean-room rewrite': 'Un "clean-room rewrite" es cuando reconstruyes un software desde cero, sin copiar el código original, solo replicando su comportamiento observable. Es una práctica legal común en ingeniería de software.',
+    'harness de agentes': 'Un "harness" (arnés) de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas y orquestando el flujo de trabajo. Sin harness, el modelo solo produce texto.',
     'harness': 'Un "harness" (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo.',
     'Rust': 'Rust es un lenguaje de programación que prioriza la seguridad de memoria y el rendimiento. Es ideal para sistemas de alta confiabilidad. Cuando escuches "memory-safe", piensa en Rust.',
     'runtime': 'El "runtime" es el ambiente de ejecución del sistema — el conjunto de procesos que arranca, configura el entorno, carga las herramientas disponibles, y luego gestiona la conversación turno por turno.',
     'JSON': 'JSON (JavaScript Object Notation) es un formato de texto para almacenar datos estructurados. Piensa en él como una tabla de Excel pero en texto plano — con llaves { } para agrupar y corchetes [ ] para listas.',
-    'snapshot': 'Un "snapshot" es una fotografía del estado de un sistema en un momento dado. Los snapshots de Claw Code capturan los nombres, responsabilidades y ubicaciones de los módulos del Claude Code original.',
+    'snapshot': 'Un "snapshot" es una fotografía del estado de un sistema en un momento dado. Los snapshots de Claw Code capturan los nombres, responsabilidades y ubicaciones de los 207 comandos y 184 herramientas del sistema.',
     'dataclasses': 'Un "dataclass" en Python es una forma rápida de crear clases que solo almacenan datos. Piensa en ellas como fichas o formularios. "frozen=True" significa que una vez creada, la ficha no se puede modificar.',
     'context window': 'El "context window" es la cantidad de texto que un modelo de IA puede "ver" al mismo tiempo. Es como la memoria de trabajo humana — si la conversación es muy larga, las partes viejas se compactan o eliminan.',
     'separación de responsabilidades': 'El principio de "separation of concerns" es una regla fundamental: cada parte del sistema debe ocuparse de una sola cosa. Si mezclas datos con lógica, cada cambio se vuelve frágil y arriesgado.',
@@ -1840,7 +1840,7 @@ resolver = <span class="st">"2"</span>
     commands:       { imports: ['models','reference_data'], desc: 'Carga y expone los 207 comandos desde el snapshot JSON.' },
     tools:          { imports: ['models','permissions','reference_data'], desc: 'Carga los 184 tools, los filtra por permisos.' },
     models:         { imports: [], desc: 'Dataclasses puros — sin dependencias externas. La base de todo.' },
-    reference_data: { imports: [], desc: 'Archivos JSON estáticos — snapshots del Claude Code original.' },
+    reference_data: { imports: [], desc: 'Archivos JSON estáticos — catálogo de comandos y herramientas disponibles.' },
   };
 
   const depNodes = document.querySelectorAll('.dep-node');
