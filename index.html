@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claw Code — Curso Interactivo</title>
+<title>Claude Code — Curso Interactivo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -657,15 +657,15 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
 <nav id="nav">
   <button class="nav-dot active" onclick="scrollTo_(0)" title="Inicio"></button>
   <button class="nav-dot" onclick="scrollTo_(1)" title="El restaurante"></button>
-  <button class="nav-dot" onclick="scrollTo_(2)" title="Qué es Claw Code"></button>
-  <button class="nav-dot" onclick="scrollTo_(3)" title="Los personajes"></button>
-  <button class="nav-dot" onclick="scrollTo_(4)" title="El runtime"></button>
-  <button class="nav-dot" onclick="scrollTo_(5)" title="Datos de referencia"></button>
-  <button class="nav-dot" onclick="scrollTo_(6)" title="El ciclo de un prompt"></button>
-  <button class="nav-dot" onclick="scrollTo_(7)" title="Permisos"></button>
-  <button class="nav-dot" onclick="scrollTo_(8)" title="El port a Rust"></button>
+  <button class="nav-dot" onclick="scrollTo_(2)" title="Que es Claude Code"></button>
+  <button class="nav-dot" onclick="scrollTo_(3)" title="El system prompt"></button>
+  <button class="nav-dot" onclick="scrollTo_(4)" title="Las 45 herramientas"></button>
+  <button class="nav-dot" onclick="scrollTo_(5)" title="Permisos y seguridad"></button>
+  <button class="nav-dot" onclick="scrollTo_(6)" title="Contexto y compactacion"></button>
+  <button class="nav-dot" onclick="scrollTo_(7)" title="Memoria y CLAUDE.md"></button>
+  <button class="nav-dot" onclick="scrollTo_(8)" title="Modo KAIROS"></button>
   <button class="nav-dot" onclick="scrollTo_(9)" title="Mapa de dependencias"></button>
-  <button class="nav-dot" onclick="scrollTo_(10)" title="Cuadro completo"></button>
+  <button class="nav-dot" onclick="scrollTo_(10)" title="Tips y cuadro completo"></button>
 </nav>
 
 <div id="tooltip"></div>
@@ -673,27 +673,26 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
 <!-- ==================== HERO ==================== -->
 <section class="hero module" id="mod-0">
   <div class="hero-inner">
-    <div class="hero-badge">207 comandos · 184 herramientas · Python + Rust</div>
-    <h1>Cómo funciona<br><span class="accent">Claw Code</span><br>por dentro</h1>
-    <p>Un curso interactivo para entender la ingeniería de un "harness" de agentes de IA — la maquinaria invisible que conecta herramientas, orquesta tareas y gestiona el contexto de runtime.</p>
-    <p style="font-size:0.9rem; color:#8B7E6E;">Basado en el repositorio <code style="font-family:var(--font-mono);font-size:0.82rem;background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:4px;">instructkr/claw-code</code></p>
+    <div class="hero-badge">45 herramientas · 6 agentes · 200K context · ~512K lineas TypeScript</div>
+    <h1>Como funciona<br><span class="accent">Claude Code</span><br>por dentro</h1>
+    <p>Un curso interactivo para entender la ingenieria de un agente de IA de codigo — la maquinaria invisible que conecta herramientas, orquesta tareas y gestiona el contexto entre tu prompt y la respuesta.</p>
   </div>
-  <div class="scroll-hint">↓ scroll para comenzar</div>
+  <div class="scroll-hint">&#8595; scroll para comenzar</div>
 </section>
 
 <!-- ==================== STORY INTRO ==================== -->
 <section class="module story-section" id="mod-story">
   <div class="module-inner" style="max-width:720px;">
-    <h2 class="fade-in" style="text-align:center;font-size:clamp(1.6rem,3.5vw,2.2rem);">Antes de ver el código,<br>entremos a un restaurante.</h2>
+    <h2 class="fade-in" style="text-align:center;font-size:clamp(1.6rem,3.5vw,2.2rem);">Antes de ver el codigo,<br>entremos a un restaurante.</h2>
 
     <p class="story-text fade-in" style="margin-top:var(--space-8);">
-      Imagina un restaurante con <em>200 platillos</em> en la carta. Tú llegas, te sientas en la barra, y haces tu pedido. No ves la cocina. Solo ves que, después de un rato, tu plato aparece.
+      Imagina un restaurante con <em>200 platillos</em> en la carta. Tu llegas, te sientas en la barra, y haces tu pedido. No ves la cocina. Solo ves que, despues de un rato, tu plato aparece.
     </p>
     <p class="story-text fade-in">
-      Pero detrás de esa barra hay un <em>sistema completo</em>: un chef ejecutivo que coordina todo, una bodega con inventario de cada ingrediente, un inspector de sanidad que revisa que nada peligroso llegue al plato, y un archivo donde queda registrada cada comanda del día.
+      Pero detras de esa barra hay un <em>sistema completo</em>: un chef ejecutivo que coordina todo, 45 utensilios especializados, un inspector de sanidad con 6 niveles de revision, una bodega con memoria de cada comensal, y un chef nocturno que trabaja cuando cierran.
     </p>
     <p class="story-text fade-in">
-      <em>Claw Code funciona exactamente así.</em> Y en este curso, vamos a recorrer cada rincón de esa cocina.
+      <em>Claude Code funciona exactamente asi.</em> Y en este curso, vamos a recorrer cada rincon de esa cocina.
     </p>
 
     <!-- Panoramic restaurant SVG -->
@@ -709,15 +708,15 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <text x="116" y="78" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-size="11" font-weight="700" fill="#D94F30">LA BARRA</text>
         <!-- Counter -->
         <rect x="32" y="110" width="168" height="8" rx="4" fill="#D94F30" opacity="0.3"/>
-        <!-- Person (customer) - simple geometric -->
+        <!-- Person (customer) -->
         <circle cx="70" cy="140" r="10" fill="#F5F0E8"/>
         <rect x="62" y="152" width="16" height="24" rx="4" fill="#F5F0E8"/>
         <!-- Speech bubble -->
         <rect x="90" y="125" width="100" height="28" rx="6" fill="#FAF6F1" opacity="0.9"/>
         <text x="140" y="143" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#2C2418">"fix auth bug"</text>
         <!-- Arrow pointing right -->
-        <text x="202" y="148" font-size="16" fill="#D94F30" opacity="0.7">→</text>
-        <text x="116" y="196" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Tu prompt entra aquí</text>
+        <text x="202" y="148" font-size="16" fill="#D94F30" opacity="0.7">&#8594;</text>
+        <text x="116" y="196" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Tu prompt entra aqui</text>
 
         <!-- Zone 2: La Cocina (Runtime) -->
         <rect x="228" y="56" width="264" height="140" rx="8" fill="#332D3E" stroke="#2A9D8F" stroke-width="1.5" stroke-dasharray="4 3"/>
@@ -725,63 +724,63 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <!-- Chef (central figure) -->
         <circle cx="360" cy="110" r="12" fill="#2A9D8F"/>
         <rect x="352" y="124" width="16" height="20" rx="4" fill="#2A9D8F" opacity="0.7"/>
-        <text x="360" y="114" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#FAF6F1">⚙</text>
+        <text x="360" y="114" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#FAF6F1">&#9881;</text>
         <!-- Stations -->
         <rect x="248" y="100" width="56" height="36" rx="6" fill="#3D3748" stroke="#6C7086" stroke-width="1"/>
-        <text x="276" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#CDD6F4">route</text>
+        <text x="276" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#CDD6F4">system</text>
         <text x="276" y="126" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#9B8E7D">prompt</text>
         <rect x="416" y="100" width="56" height="36" rx="6" fill="#3D3748" stroke="#6C7086" stroke-width="1"/>
-        <text x="444" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#CDD6F4">execute</text>
-        <text x="444" y="126" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#9B8E7D">tools</text>
+        <text x="444" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#CDD6F4">tools</text>
+        <text x="444" y="126" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#9B8E7D">(45)</text>
         <!-- Inspector (small) -->
         <rect x="320" y="148" width="80" height="28" rx="6" fill="#3D3748" stroke="#9B59B6" stroke-width="1"/>
-        <text x="360" y="166" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#9B59B6">🚫 sanidad</text>
-        <!-- Connection arrows inside kitchen -->
+        <text x="360" y="166" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="7" fill="#9B59B6">&#128683; permisos</text>
+        <!-- Connection arrows -->
         <line x1="304" y1="118" x2="348" y2="118" stroke="#6C7086" stroke-width="1" stroke-dasharray="2 2"/>
         <line x1="372" y1="118" x2="416" y2="118" stroke="#6C7086" stroke-width="1" stroke-dasharray="2 2"/>
-        <text x="360" y="196" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Aquí se orquesta todo</text>
+        <text x="360" y="196" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Aqui se orquesta todo</text>
 
         <!-- Zone 3: La Bodega (Data) -->
         <rect x="504" y="56" width="200" height="140" rx="8" fill="#332D3E" stroke="#B8860B" stroke-width="1.5" stroke-dasharray="4 3"/>
         <text x="604" y="78" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-size="11" font-weight="700" fill="#B8860B">LA BODEGA</text>
         <!-- Arrow pointing right into bodega -->
-        <text x="494" y="128" font-size="16" fill="#2A9D8F" opacity="0.7">→</text>
+        <text x="494" y="128" font-size="16" fill="#2A9D8F" opacity="0.7">&#8594;</text>
         <!-- Shelves -->
         <rect x="520" y="92" width="168" height="4" rx="2" fill="#4A4258"/>
         <rect x="520" y="126" width="168" height="4" rx="2" fill="#4A4258"/>
         <rect x="520" y="160" width="168" height="4" rx="2" fill="#4A4258"/>
-        <!-- Jars/items on shelves -->
+        <!-- Items on shelves -->
         <rect x="528" y="100" width="32" height="24" rx="4" fill="#3D3748" stroke="#B8860B" stroke-width="1"/>
-        <text x="544" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#B8860B">207</text>
+        <text x="544" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#B8860B">45</text>
         <rect x="568" y="100" width="32" height="24" rx="4" fill="#3D3748" stroke="#B8860B" stroke-width="1"/>
-        <text x="584" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#B8860B">184</text>
-        <rect x="608" y="100" width="32" height="24" rx="4" fill="#3D3748" stroke="#B8860B" stroke-width="1"/>
-        <text x="624" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#B8860B">JSON</text>
+        <text x="584" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#B8860B">200K</text>
+        <rect x="608" y="100" width="36" height="24" rx="4" fill="#3D3748" stroke="#B8860B" stroke-width="1"/>
+        <text x="626" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#B8860B">CLAUDE</text>
         <rect x="648" y="100" width="32" height="24" rx="4" fill="#3D3748" stroke="#6C7086" stroke-width="1"/>
-        <text x="664" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#9B8E7D">sub</text>
+        <text x="664" y="116" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="6" fill="#9B8E7D">MCP</text>
         <!-- Filed receipts -->
         <rect x="528" y="134" width="24" height="22" rx="3" fill="#3D3748" stroke="#6C7086" stroke-width="0.5"/>
         <rect x="556" y="134" width="24" height="22" rx="3" fill="#3D3748" stroke="#6C7086" stroke-width="0.5"/>
         <rect x="584" y="134" width="24" height="22" rx="3" fill="#3D3748" stroke="#6C7086" stroke-width="0.5"/>
-        <text x="540" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#9B8E7D">sess</text>
-        <text x="568" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#9B8E7D">hist</text>
-        <text x="596" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#9B8E7D">txn</text>
-        <text x="604" y="196" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Inventario y memoria</text>
+        <text x="540" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#9B8E7D">mem</text>
+        <text x="568" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#9B8E7D">ctx</text>
+        <text x="596" y="148" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="5" fill="#9B8E7D">hist</text>
+        <text x="604" y="196" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Memoria y contexto</text>
       </svg>
     </div>
 
     <p class="story-text fade-in" style="font-size:0.9rem;color:#9B8E7D;">
-      En cada módulo de este curso, volveremos a este restaurante para anclar cada concepto técnico en algo familiar.
+      En cada modulo de este curso, volveremos a este restaurante para anclar cada concepto tecnico en algo familiar.
     </p>
   </div>
 </section>
 
-<!-- ==================== MODULE 1: QUÉ ES ==================== -->
+<!-- ==================== MODULE 1: QUE ES ==================== -->
 <section class="module" id="mod-1">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 1</span>
-    <h2 class="fade-in">¿Qué es Claw Code y<br>para qué sirve?</h2>
-    <p class="subtitle fade-in">Un <span class="term" data-def="Un 'harness' (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo. Sin harness, el modelo solo puede responder texto.">harness</span> de agentes de IA — abierto, legible y construido para entender.</p>
+    <span class="mod-tag fade-in">Modulo 1</span>
+    <h2 class="fade-in">Que es Claude Code<br>por dentro?</h2>
+    <p class="subtitle fade-in">Un sistema de <span class="term" data-def="Un agente de codigo es un sistema que envuelve a un modelo de lenguaje, conectandolo con herramientas externas (como terminal, archivos, navegadores) y orquestando el flujo de trabajo. Sin este sistema, el modelo solo produce texto.">agente de codigo</span> con ~512,000 lineas de TypeScript que conecta a Claude con tu entorno.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
@@ -792,138 +791,149 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <circle cx="34" cy="32" r="4" fill="#2A9D8F" opacity="0.4"/>
         <line x1="28" y1="22" x2="28" y2="42" stroke="#D94F30" stroke-width="1" stroke-dasharray="2 2" opacity="0.3"/>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Este es un restaurante con 200 platillos en la carta. Tú solo ves la barra donde pides — pero detrás hay una cocina completa con roles, reglas y flujos definidos. Vamos a entender cómo funciona esa cocina.</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Este restaurante tiene 200 platillos en la carta, 45 utensilios especializados de cocina, y 6 chefs con roles diferentes. Tu solo ves la barra donde pides — pero detras hay una operacion completa.</div>
     </div>
 
-    <p class="fade-in">Cuando usas un agente de IA como Claude Code, tú escribes un prompt y recibes una respuesta. Pero entre tu texto y la respuesta hay un sistema complejo: el <span class="term" data-def="Un 'harness' (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo. Sin harness, el modelo solo puede responder texto.">harness</span>. Es la maquinaria que decide qué herramientas usar, qué permisos revisar, y cómo gestionar la conversación.</p>
-
-    <p class="fade-in">Claw Code implementa esa maquinaria de forma abierta y legible — primero en Python, ahora también en <span class="term" data-def="Rust es un lenguaje de programación que prioriza la seguridad de memoria y el rendimiento. Es ideal para sistemas de alta confiabilidad. Cuando escuches 'memory-safe', piensa en Rust.">Rust</span> — lo que nos permite estudiar cómo funciona pieza por pieza.</p>
+    <p class="fade-in">Cuando usas Claude Code, escribes un prompt y recibes una respuesta. Pero entre tu texto y la respuesta hay un sistema masivo: <strong>~512,000 lineas de TypeScript</strong> distribuidas en ~1,884 archivos que deciden que herramientas usar, que permisos revisar, y como gestionar la conversacion.</p>
 
     <div class="cards fade-in">
       <div class="card">
-        <span class="card-icon">🎯</span>
-        <div class="card-title">Routing de prompts</div>
-        <div class="card-desc">Cada prompt se tokeniza y se compara contra un catálogo de 207 comandos y 184 herramientas para encontrar la mejor acción.</div>
+        <span class="card-icon">&#128295;</span>
+        <div class="card-title">45 herramientas en 9 categorias</div>
+        <div class="card-desc">Files, Shell, Web, Agents, Planning, Tasks, Scheduling, UI, MCP — cada una especializada en un tipo de operacion.</div>
       </div>
       <div class="card">
-        <span class="card-icon">🔒</span>
-        <div class="card-title">Sistema de permisos</div>
-        <div class="card-desc">Antes de ejecutar cualquier herramienta, un gate de seguridad verifica que no sea peligrosa — con listas de bloqueo por nombre y por prefijo.</div>
+        <span class="card-icon">&#128274;</span>
+        <div class="card-title">6 modos de permisos</div>
+        <div class="card-desc">Desde "preguntar todo" hasta "modo auto" con un clasificador de IA de dos etapas que decide que es seguro ejecutar.</div>
       </div>
       <div class="card">
-        <span class="card-icon">⚡</span>
-        <div class="card-title">Turn loop con presupuesto</div>
-        <div class="card-desc">Cada turno de conversación se controla con un presupuesto de tokens y compactación automática de la historia.</div>
+        <span class="card-icon">&#9889;</span>
+        <div class="card-title">200K tokens de contexto</div>
+        <div class="card-desc">Con auto-compactacion cuando quedan ~13K tokens, micro-compactacion de resultados viejos, y hasta 1M para modelos avanzados.</div>
       </div>
     </div>
 
     <div class="callout fade-in">
-      <div class="callout-label">💡 ¿Por qué importa?</div>
-      <p style="margin:0;">Un harness de agente es lo que convierte un LLM "desnudo" (que solo produce texto) en una herramienta que puede ejecutar comandos, editar archivos, y conectarse a servicios externos. Entender cómo funciona te permite dirigir mejor a cualquier agente de IA.</p>
+      <div class="callout-label">Por que importa?</div>
+      <p style="margin:0;">Entender como funciona Claude Code por dentro te permite dirigirlo mejor. Saber que tiene herramientas dedicadas (Read en vez de cat, Grep en vez de grep) o que su <span class="term" data-def="El system prompt es el conjunto de instrucciones que define el comportamiento de Claude Code. Tiene 6 capas de prioridad y 7 secciones estaticas que cubren desde la identidad del sistema hasta reglas de formato de salida.">system prompt</span> tiene 6 capas de prioridad cambia como le hablas.</p>
     </div>
   </div>
 </section>
 
-<!-- ==================== MODULE 2: PERSONAJES ==================== -->
+<!-- ==================== MODULE 2: SYSTEM PROMPT ==================== -->
 <section class="module" id="mod-2">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 2</span>
-    <h2 class="fade-in">Los personajes<br>del sistema</h2>
-    <p class="subtitle fade-in">Como una orquesta sinfónica, cada módulo tiene un papel definido.</p>
+    <span class="mod-tag fade-in">Modulo 2</span>
+    <h2 class="fade-in">El system prompt —<br>las reglas de la casa</h2>
+    <p class="subtitle fade-in">6 capas de prioridad, 7 secciones estaticas, y un <span class="term" data-def="El cache boundary es el punto en el system prompt donde se separa el contenido estatico (que se cachea entre llamadas para ahorrar costos) del contenido dinamico (que cambia en cada peticion). Las primeras 4 secciones se cachean; el resto es dinamico.">cache boundary</span> que separa lo fijo de lo dinamico.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
         <rect width="56" height="56" rx="12" fill="#FFF8F5"/>
         <rect x="8" y="14" width="14" height="30" rx="3" fill="#D94F30" opacity="0.25"/>
         <rect x="8" y="12" width="14" height="6" rx="3" fill="#D94F30" opacity="0.5"/>
-        <text x="15" y="34" text-anchor="middle" font-size="7" fill="#D94F30" font-weight="700">B</text>
+        <text x="15" y="34" text-anchor="middle" font-size="7" fill="#D94F30" font-weight="700">1</text>
         <rect x="25" y="14" width="14" height="30" rx="3" fill="#2A9D8F" opacity="0.25"/>
         <rect x="25" y="12" width="14" height="6" rx="3" fill="#2A9D8F" opacity="0.5"/>
-        <text x="32" y="34" text-anchor="middle" font-size="7" fill="#2A9D8F" font-weight="700">C</text>
+        <text x="32" y="34" text-anchor="middle" font-size="7" fill="#2A9D8F" font-weight="700">5</text>
         <rect x="42" y="14" width="10" height="30" rx="3" fill="#B8860B" opacity="0.25"/>
         <rect x="42" y="12" width="10" height="6" rx="3" fill="#B8860B" opacity="0.5"/>
-        <text x="47" y="34" text-anchor="middle" font-size="7" fill="#B8860B" font-weight="700">D</text>
+        <text x="47" y="34" text-anchor="middle" font-size="7" fill="#B8860B" font-weight="700">6</text>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Tres zonas claras — <strong>la barra</strong> donde pides (CLI), <strong>la cocina</strong> donde se coordina todo (Runtime), y <strong>la bodega</strong> donde se guardan ingredientes y recetas (Datos).</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Las reglas escritas en la pared de la cocina. Las del dueno van arriba (nadie las cambia), las del turno van abajo (se actualizan cada dia). Y hay unas reglas especiales — las del <strong>CLAUDE.md</strong> — que el chef consulta como su recetario personal.</div>
     </div>
 
-    <p class="fade-in">Claw Code tiene ~60 archivos Python organizados en un elenco de actores que trabajan juntos. Cada uno con una responsabilidad clara — si necesitas cambiar algo, sabes exactamente a quién hablarle.</p>
+    <p class="fade-in">El system prompt no es un solo bloque de texto. Es un sistema de <strong>6 capas de prioridad</strong> donde cada capa puede reemplazar o complementar a las demas. La capa mas alta gana.</p>
 
     <div class="arch-diagram fade-in">
       <div class="arch-layer cli">
-        <span class="arch-layer-label">Capa CLI — La taquilla</span>
+        <span class="arch-layer-label">Capas 1-3 — Overrides (mayor prioridad)</span>
         <div class="arch-items">
-          <span class="arch-item">main.py</span>
-          <span class="arch-item">commands.py</span>
-          <span class="arch-item">tools.py</span>
-          <span class="arch-item">setup.py</span>
+          <span class="arch-item">1. Override prompt</span>
+          <span class="arch-item">2. Coordinator (multi-agente)</span>
+          <span class="arch-item">3. Agent (sub-agente)</span>
+          <span class="arch-item">4. Custom (--system-prompt)</span>
         </div>
       </div>
       <div class="arch-layer runtime">
-        <span class="arch-layer-label">Capa Runtime — El director</span>
+        <span class="arch-layer-label">Capa 5 — Default (7 secciones + CLAUDE.md)</span>
         <div class="arch-items">
-          <span class="arch-item">runtime.py</span>
-          <span class="arch-item">query_engine.py</span>
-          <span class="arch-item">execution_registry.py</span>
-          <span class="arch-item">permissions.py</span>
+          <span class="arch-item">Intro + Seguridad</span>
+          <span class="arch-item">System</span>
+          <span class="arch-item">Doing Tasks</span>
+          <span class="arch-item">Executing Actions</span>
+          <span class="arch-item">Using Tools</span>
+          <span class="arch-item">Tone & Style</span>
+          <span class="arch-item">Output Efficiency</span>
         </div>
       </div>
       <div class="arch-layer data">
-        <span class="arch-layer-label">Capa Datos — El archivo</span>
+        <span class="arch-layer-label">Capa 6 — Append (contexto dinamico)</span>
         <div class="arch-items">
-          <span class="arch-item">models.py</span>
-          <span class="arch-item">session_store.py</span>
-          <span class="arch-item">transcript.py</span>
-          <span class="arch-item">reference_data/</span>
+          <span class="arch-item">Memoria (MEMORY.md)</span>
+          <span class="arch-item">MCP servers</span>
+          <span class="arch-item">Idioma detectado</span>
+          <span class="arch-item">Entorno (OS, shell, git)</span>
         </div>
       </div>
     </div>
 
     <div class="translation fade-in">
       <div>
-        <div class="translation-label">Código</div>
+        <div class="translation-label">Estructura de capas</div>
         <div class="translation-code">
-<pre><span class="dc">@dataclass</span>(frozen=<span class="kw">True</span>)
-<span class="kw">class</span> <span class="cl">PortingModule</span>:
-    name: <span class="cl">str</span>
-    responsibility: <span class="cl">str</span>
-    source_hint: <span class="cl">str</span>
-    status: <span class="cl">str</span> = <span class="st">'planned'</span></pre>
+<pre><span class="cm">// Prioridad del system prompt</span>
+<span class="kw">const</span> <span class="fn">layers</span> = [
+  <span class="st">"override"</span>,     <span class="cm">// reemplaza TODO</span>
+  <span class="st">"coordinator"</span>,  <span class="cm">// modo multi-agente</span>
+  <span class="st">"agent"</span>,        <span class="cm">// sub-agente</span>
+  <span class="st">"custom"</span>,       <span class="cm">// flag CLI</span>
+  <span class="st">"default"</span>,      <span class="cm">// 7 secciones + CLAUDE.md</span>
+  <span class="st">"append"</span>,       <span class="cm">// memoria + entorno</span>
+];
+<span class="cm">// Cache boundary: entre seccion 4 y 5</span>
+<span class="cm">// Secciones 1-4 se cachean (estaticas)</span>
+<span class="cm">// Secciones 5-7 + append son dinamicas</span></pre>
         </div>
       </div>
       <div>
-        <div class="translation-label">En español</div>
+        <div class="translation-label">En espanol</div>
         <div class="translation-english">
-          <div class="translation-line">📦 Una ficha de inventario congelada (no se puede modificar)</div>
-          <div class="translation-line">que describe un módulo del codebase original:</div>
-          <div class="translation-line">→ su nombre</div>
-          <div class="translation-line">→ qué hace (su responsabilidad)</div>
-          <div class="translation-line">→ de qué parte del sistema viene</div>
-          <div class="translation-line">→ su estado actual (por defecto: "planeado")</div>
+          <div class="translation-line">&#128205; Las instrucciones de Claude Code vienen en capas:</div>
+          <div class="translation-line">La capa mas alta reemplaza todo lo de abajo.</div>
+          <div class="translation-line">En modo normal, solo se usa "default" + "append".</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">La capa default tiene 7 secciones fijas</div>
+          <div class="translation-line">+ el contenido de CLAUDE.md del proyecto.</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">Hay un "cache boundary" (corte de cache):</div>
+          <div class="translation-line">las primeras 4 secciones se reusan entre llamadas</div>
+          <div class="translation-line">para ahorrar costos de API.</div>
         </div>
       </div>
     </div>
 
     <div class="callout callout-teal fade-in">
-      <div class="callout-label">🎯 Concepto universal</div>
-      <p style="margin:0;">Los <span class="term" data-def="Un 'dataclass' en Python es una forma rápida de crear clases que solo almacenan datos. Piensa en ellas como fichas o formularios — cada campo tiene un nombre y un tipo. 'frozen=True' significa que una vez creada, la ficha no se puede modificar.">dataclasses</span> congelados son como formularios sellados en una notaría: una vez firmados, nadie puede alterar los datos. Es un patrón de seguridad — si algo es "frozen", puedes confiar en que no cambiará bajo tus pies.</p>
+      <div class="callout-label">Por que CLAUDE.md tiene tanto poder?</div>
+      <p style="margin:0;">CLAUDE.md se inyecta en la <strong>capa 5 (default)</strong>, no en la capa 6 (append) como la memoria regular. Esto le da mas peso porque esta mas arriba en la jerarquia. Es como las reglas del chef principal vs las notas del mesero — ambas cuentan, pero las del chef mandan.</p>
     </div>
   </div>
 </section>
 
-<!-- ==================== MODULE 3: RUNTIME ==================== -->
+<!-- ==================== MODULE 3: TOOLS ==================== -->
 <section class="module" id="mod-3">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 3</span>
-    <h2 class="fade-in">El Runtime —<br>director de orquesta</h2>
-    <p class="subtitle fade-in">Cuando escribes un prompt, el <span class="term" data-def="El 'runtime' es el ambiente de ejecución del sistema — el conjunto de procesos que arranca, configura el entorno, carga las herramientas disponibles, y luego gestiona la conversación turno por turno. Es como la cabina de un avión: todo lo que el piloto necesita para volar.">runtime</span> orquesta todo lo que pasa debajo.</p>
+    <span class="mod-tag fade-in">Modulo 3</span>
+    <h2 class="fade-in">Las 45 herramientas</h2>
+    <p class="subtitle fade-in">9 categorias de <span class="term" data-def="Las herramientas (tools) son funciones estructuradas que Claude Code puede invocar para interactuar con tu sistema: leer archivos, ejecutar comandos, buscar en la web, lanzar sub-agentes, etc. Cada herramienta tiene un schema JSON que define sus parametros.">herramientas</span> — desde leer archivos hasta lanzar sub-agentes autonomos.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
         <rect width="56" height="56" rx="12" fill="#F0FAF8"/>
         <circle cx="28" cy="24" r="10" fill="#2A9D8F" opacity="0.3"/>
         <circle cx="28" cy="24" r="5" fill="#2A9D8F"/>
-        <text x="28" y="27" text-anchor="middle" font-size="6" fill="white" font-weight="700">⚙</text>
+        <text x="28" y="27" text-anchor="middle" font-size="6" fill="white" font-weight="700">&#9881;</text>
         <line x1="18" y1="38" x2="14" y2="44" stroke="#2A9D8F" stroke-width="1.5" opacity="0.5"/>
         <line x1="28" y1="38" x2="28" y2="46" stroke="#2A9D8F" stroke-width="1.5" opacity="0.5"/>
         <line x1="38" y1="38" x2="42" y2="44" stroke="#2A9D8F" stroke-width="1.5" opacity="0.5"/>
@@ -931,86 +941,293 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <circle cx="28" cy="48" r="3" fill="#6C7086" opacity="0.4"/>
         <circle cx="42" cy="46" r="3" fill="#6C7086" opacity="0.4"/>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El chef ejecutivo. Nunca cocina directamente, pero lee cada comanda, decide qué estación la prepara, y se asegura de que nada salga sin su visto bueno.</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> 45 utensilios de cocina especializados. Hay un cuchillo para pescado, otro para pan, otro para carne. El chef <em>nunca</em> usa el cuchillo de pan para filetear — porque cada utensilio esta optimizado para su tarea. Claude Code funciona igual: usa <strong>Read</strong> en vez de <code>cat</code>, <strong>Grep</strong> en vez de <code>grep</code>.</div>
     </div>
 
-    <p class="fade-in">El <code style="font-family:var(--font-mono);background:var(--bg-warm-alt);padding:2px 6px;border-radius:4px;">PortRuntime</code> es el cerebro del sistema. Cuando llega un prompt, ejecuta una coreografía precisa en siete pasos.</p>
-
-    <div class="steps fade-in">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-content"><strong>Prefetch</strong> — Arranca procesos en paralelo: escaneo del proyecto, lectura de keychain, verificación MDM.</div>
+    <div class="cards fade-in" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+      <div class="card">
+        <span class="card-icon">&#128193;</span>
+        <div class="card-title">Files (6)</div>
+        <div class="card-desc">Read, Write, Edit, Glob, Grep, NotebookEdit</div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-content"><strong>Context</strong> — Mapea el espacio de trabajo: cuántos archivos hay, qué recursos están disponibles, y cuál es la estructura del proyecto.</div>
+      <div class="card">
+        <span class="card-icon">&#128187;</span>
+        <div class="card-title">Shell (3)</div>
+        <div class="card-desc">Bash, PowerShell, REPL</div>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-content"><strong>Routing</strong> — Tokeniza tu prompt, lo compara contra 207 comandos y 184 herramientas, y puntúa los mejores candidatos.</div>
+      <div class="card">
+        <span class="card-icon">&#127760;</span>
+        <div class="card-title">Web (2)</div>
+        <div class="card-desc">WebFetch, WebSearch</div>
       </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <div class="step-content"><strong>Permission check</strong> — Filtra herramientas peligrosas (como bash destructivo) antes de ejecutar nada.</div>
+      <div class="card">
+        <span class="card-icon">&#129302;</span>
+        <div class="card-title">Agents (4)</div>
+        <div class="card-desc">Agent, SendMessage, TeamCreate, TeamDelete</div>
       </div>
-      <div class="step">
-        <div class="step-num">5</div>
-        <div class="step-content"><strong>Execution</strong> — Ejecuta los comandos y herramientas seleccionados a través del ExecutionRegistry.</div>
+      <div class="card">
+        <span class="card-icon">&#128203;</span>
+        <div class="card-title">Planning (4)</div>
+        <div class="card-desc">EnterPlanMode, ExitPlanMode, EnterWorktree, ExitWorktree</div>
       </div>
-      <div class="step">
-        <div class="step-num">6</div>
-        <div class="step-content"><strong>Query Engine</strong> — Procesa el mensaje, gestiona el presupuesto de tokens, y compacta la historia si es necesario.</div>
+      <div class="card">
+        <span class="card-icon">&#9745;</span>
+        <div class="card-title">Tasks (5)</div>
+        <div class="card-desc">TaskCreate, TaskUpdate, TaskStop, TaskOutput, TodoWrite</div>
       </div>
-      <div class="step">
-        <div class="step-num">7</div>
-        <div class="step-content"><strong>Persist</strong> — Guarda la sesión en disco para poder retomarla después.</div>
+      <div class="card">
+        <span class="card-icon">&#9200;</span>
+        <div class="card-title">Scheduling (4)</div>
+        <div class="card-desc">CronCreate, CronDelete, CronList, RemoteTrigger</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128172;</span>
+        <div class="card-title">UI (3)</div>
+        <div class="card-desc">AskUserQuestion, Brief, SkillTool</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128268;</span>
+        <div class="card-title">MCP (4)</div>
+        <div class="card-desc">MCPTool, ListMcpResources, ReadMcpResource, McpAuth</div>
       </div>
     </div>
 
     <div class="translation fade-in">
       <div>
-        <div class="translation-label">Código — runtime.py</div>
+        <div class="translation-label">Regla de herramientas dedicadas</div>
         <div class="translation-code">
-<pre><span class="kw">def</span> <span class="fn">route_prompt</span>(self, prompt, limit=<span class="nb">5</span>):
-    tokens = {t.lower() <span class="kw">for</span> t <span class="kw">in</span>
-        prompt.replace(<span class="st">'/'</span>,<span class="st">' '</span>)
-              .replace(<span class="st">'-'</span>,<span class="st">' '</span>)
-              .split() <span class="kw">if</span> t}
-    by_kind = {
-      <span class="st">'command'</span>: self._collect_matches(
-          tokens, PORTED_COMMANDS, <span class="st">'command'</span>),
-      <span class="st">'tool'</span>: self._collect_matches(
-          tokens, PORTED_TOOLS, <span class="st">'tool'</span>),
-    }</pre>
+<pre><span class="cm">// El system prompt dice explicitamente:</span>
+<span class="cm">// "Do NOT use Bash to run commands</span>
+<span class="cm">//  when a relevant dedicated tool</span>
+<span class="cm">//  is provided."</span>
+
+<span class="cm">// En vez de:</span>
+<span class="fn">Bash</span>(<span class="st">"cat src/index.ts"</span>)     <span class="cm">// MAL</span>
+<span class="fn">Bash</span>(<span class="st">"grep -r 'TODO' ."</span>)    <span class="cm">// MAL</span>
+<span class="fn">Bash</span>(<span class="st">"find . -name '*.ts'"</span>) <span class="cm">// MAL</span>
+
+<span class="cm">// Claude Code usa:</span>
+<span class="fn">Read</span>(<span class="st">"src/index.ts"</span>)         <span class="cm">// BIEN</span>
+<span class="fn">Grep</span>(<span class="st">"TODO"</span>)                 <span class="cm">// BIEN</span>
+<span class="fn">Glob</span>(<span class="st">"**/*.ts"</span>)              <span class="cm">// BIEN</span></pre>
         </div>
       </div>
       <div>
-        <div class="translation-label">En español</div>
+        <div class="translation-label">En espanol</div>
         <div class="translation-english">
-          <div class="translation-line">📍 Cuando llega un prompt, lo despedaza:</div>
-          <div class="translation-line">rompe barras y guiones en palabras sueltas,</div>
-          <div class="translation-line">las pone en minúsculas,</div>
-          <div class="translation-line">y elimina vacías.</div>
-          <div class="translation-line">Luego busca coincidencias en dos catálogos:</div>
-          <div class="translation-line">→ el catálogo de comandos (207 entradas)</div>
-          <div class="translation-line">→ el catálogo de herramientas (184 entradas)</div>
+          <div class="translation-line">&#128205; Regla fundamental del system prompt:</div>
+          <div class="translation-line">"No uses Bash cuando hay una herramienta dedicada."</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">En vez de usar cat para leer archivos,</div>
+          <div class="translation-line">usar grep del shell para buscar texto,</div>
+          <div class="translation-line">o find para buscar archivos...</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">Claude Code usa Read, Grep y Glob.</div>
+          <div class="translation-line">Son mas seguros, mas rapidos de revisar,</div>
+          <div class="translation-line">y el usuario puede aprobar/denegar cada uno.</div>
         </div>
       </div>
     </div>
 
     <div class="callout fade-in">
-      <div class="callout-label">💡 Concepto clave: Routing por tokens</div>
-      <p style="margin:0;">Esto es como el sistema de correo postal: tu prompt llega, la oficina de clasificación lo descompone en palabras clave, y cada palabra se compara contra las "direcciones" (nombres, descripciones) de todos los comandos y herramientas disponibles. El que tenga más coincidencias gana.</p>
+      <div class="callout-label">Herramientas condicionales</div>
+      <p style="margin:0;">No todas las 45 herramientas estan siempre disponibles. <strong>SleepTool</strong> solo aparece en modo <span class="term" data-def="KAIROS es el modo proactivo de Claude Code donde el agente trabaja de forma autonoma sin input del usuario, con un tick loop continuo y un SleepTool obligatorio para pausar entre acciones.">KAIROS</span>. <strong>CronTools</strong> solo con AGENT_TRIGGERS habilitado. <strong>WebBrowserTool</strong> y <strong>MonitorTool</strong> son internos de Anthropic. Las herramientas se inyectan condicionalmente segun el contexto.</p>
     </div>
   </div>
 </section>
 
-<!-- ==================== MODULE 4: REFERENCE DATA ==================== -->
+<!-- ==================== MODULE 4: PERMISSIONS ==================== -->
 <section class="module" id="mod-4">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 4</span>
-    <h2 class="fade-in">Los datos de referencia —<br>el inventario maestro</h2>
-    <p class="subtitle fade-in">Todo lo que Claw Code sabe sobre Claude Code vive en archivos <span class="term" data-def="JSON (JavaScript Object Notation) es un formato de texto para almacenar datos estructurados. Piensa en él como una tabla de Excel pero en texto plano — con llaves { } para agrupar y corchetes [ ] para listas.">JSON</span>.</p>
+    <span class="mod-tag fade-in">Modulo 4</span>
+    <h2 class="fade-in">Permisos y seguridad</h2>
+    <p class="subtitle fade-in">6 modos de permisos y un <span class="term" data-def="El YOLO classifier es un clasificador de IA de dos etapas que Claude Code usa en modo 'auto' para decidir si una accion es segura sin preguntar al usuario. Stage 1: decision rapida (64 tokens max). Stage 2: solo si Stage 1 bloquea, razonamiento profundo (4096 tokens).">YOLO classifier</span> de dos etapas que decide que es seguro.</p>
+
+    <div class="restaurant-hook fade-in">
+      <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="12" fill="#FCF5FF"/>
+        <circle cx="28" cy="22" r="8" fill="#9B59B6" opacity="0.2" stroke="#9B59B6" stroke-width="1.5"/>
+        <text x="28" y="25" text-anchor="middle" font-size="8" fill="#9B59B6" font-weight="700">&#9995;</text>
+        <rect x="14" y="34" width="28" height="14" rx="3" fill="#9B59B6" opacity="0.1" stroke="#9B59B6" stroke-width="1"/>
+        <line x1="18" y1="38" x2="38" y2="38" stroke="#9B59B6" stroke-width="0.8" opacity="0.5"/>
+        <line x1="18" y1="42" x2="32" y2="42" stroke="#9B59B6" stroke-width="0.8" opacity="0.5"/>
+        <text x="40" y="44" font-size="7" fill="#D94F30">&#10007;</text>
+      </svg>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El inspector de sanidad con <strong>6 niveles de revision</strong>. Puede ser laxo ("solo reviso si huele raro"), estricto ("reviso cada ingrediente"), o puede tener un asistente con IA que clasifica riesgos automaticamente en dos pasadas.</div>
+    </div>
+
+    <div class="steps fade-in">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content"><strong>default</strong> — Pregunta al usuario en cada operacion sensible. El modo mas conservador y seguro.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content"><strong>acceptEdits</strong> — Auto-aprueba lectura y escritura de archivos. Shell y red siguen pidiendo permiso.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content"><strong>bypassPermissions</strong> — Auto-aprueba TODO sin preguntar. Sin checks de seguridad. Alto riesgo.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content"><strong>dontAsk</strong> — En vez de preguntar, deniega automaticamente. Nunca interrumpe pero puede fallar en silencio.</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--teal);">5</div>
+        <div class="step-content"><strong>auto</strong> — El YOLO classifier decide allow/block sin preguntar. El modo con clasificador de IA.</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:#B8860B;">6</div>
+        <div class="step-content"><strong>plan</strong> — Modo de planificacion. Acceso restringido: solo lectura y busqueda, sin edicion ni ejecucion.</div>
+      </div>
+    </div>
+
+    <div class="code-block fade-in">
+      <span class="file-label">// YOLO Classifier — 2 etapas de decision</span>
+<pre><span class="cm">// Stage 1: Decision rapida (max 64 tokens)</span>
+<span class="cm">// Pregunta: "Es seguro ejecutar esto?"</span>
+<span class="cm">// Si la respuesta es "si" -> ejecutar</span>
+<span class="cm">// Si la respuesta es "no" -> ir a Stage 2</span>
+
+<span class="cm">// Stage 2: Razonamiento profundo (max 4096 tokens)</span>
+<span class="cm">// Analiza el comando completo con contexto</span>
+<span class="cm">// Si aun bloquea -> denegar la operacion</span>
+
+<span class="cm">// Patrones SIEMPRE bloqueados (hardcoded):</span>
+<span class="kw">const</span> <span class="fn">ALWAYS_BLOCKED</span> = [
+  <span class="st">"python"</span>, <span class="st">"node"</span>, <span class="st">"deno"</span>, <span class="st">"ruby"</span>, <span class="st">"perl"</span>,
+  <span class="st">"npx"</span>, <span class="st">"bunx"</span>, <span class="st">"bash"</span>, <span class="st">"sh"</span>, <span class="st">"ssh"</span>,
+  <span class="st">"eval"</span>, <span class="st">"exec"</span>, <span class="st">"sudo"</span>, <span class="st">"curl"</span>, <span class="st">"wget"</span>,
+  <span class="st">"kubectl"</span>, <span class="st">"aws"</span>, <span class="st">"gcloud"</span>, <span class="st">"git"</span>, <span class="st">"gh"</span>
+];
+<span class="cm">// Fallback: si demasiados bloqueos consecutivos,</span>
+<span class="cm">// vuelve a modo interactivo automaticamente</span></pre>
+    </div>
+
+    <div class="callout fade-in">
+      <div class="callout-label">Defensa en profundidad</div>
+      <p style="margin:0;">El sistema tiene multiples capas: los 6 modos definen la politica general, el YOLO classifier evalua cada accion individual en modo auto, y los patrones hardcoded bloquean comandos peligrosos <em>sin importar el modo</em>. Si una capa falla, las otras te cubren.</p>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz fade-in" id="quiz-1">
+      <div class="quiz-header">Pon a prueba lo que aprendiste</div>
+      <div class="quiz-question">Estas en modo <code>auto</code> y ejecutas un prompt que necesita correr <code>python script.py</code>. Que pasa?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="checkQuiz('quiz-1', this, false)">El YOLO classifier analiza el script y decide si es seguro ejecutarlo basandose en el contenido.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-1', this, true)">El comando se bloquea automaticamente porque "python" esta en la lista de patrones SIEMPRE bloqueados, sin importar lo que diga el classifier.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-1', this, false)">El sistema pide permiso al usuario porque el modo auto no aplica a interpretes de lenguaje.</button>
+      </div>
+      <div class="quiz-feedback" id="quiz-1-feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 5: CONTEXT ==================== -->
+<section class="module" id="mod-5">
+  <div class="module-inner">
+    <span class="mod-tag fade-in">Modulo 5</span>
+    <h2 class="fade-in">Contexto y<br>compactacion</h2>
+    <p class="subtitle fade-in">200K tokens de <span class="term" data-def="El context window (ventana de contexto) es la cantidad de texto que Claude puede 'ver' al mismo tiempo. Es como la memoria de trabajo humana — si la conversacion es muy larga, las partes viejas se compactan o eliminan para dejar espacio.">context window</span>, auto-compactacion, y micro-compactacion de resultados.</p>
+
+    <div class="restaurant-hook fade-in">
+      <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+        <rect width="56" height="56" rx="12" fill="#FFF8F5"/>
+        <rect x="8" y="16" width="16" height="20" rx="3" fill="#D94F30" opacity="0.15" stroke="#D94F30" stroke-width="1"/>
+        <text x="16" y="29" text-anchor="middle" font-size="6" fill="#D94F30">&#128221;</text>
+        <line x1="26" y1="26" x2="30" y2="26" stroke="#D94F30" stroke-width="1.5"/>
+        <polygon points="30,23 36,26 30,29" fill="#D94F30" opacity="0.6"/>
+        <circle cx="42" cy="26" r="6" fill="#2A9D8F" opacity="0.3" stroke="#2A9D8F" stroke-width="1"/>
+        <line x1="42" y1="34" x2="42" y2="38" stroke="#2A9D8F" stroke-width="1.5"/>
+        <polygon points="39,38 42,44 45,38" fill="#2A9D8F" opacity="0.6"/>
+        <rect x="34" y="44" width="16" height="6" rx="2" fill="#B8860B" opacity="0.3"/>
+      </svg>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> La mesa del chef tiene espacio limitado — solo caben cierta cantidad de platos al mismo tiempo. Cuando se llena, el ayudante archiva los platos terminados, deja un resumen ("mesa 4: entraron 3 platillos, salieron bien"), y libera espacio para los nuevos.</div>
+    </div>
+
+    <div class="flow fade-in">
+      <div class="flow-node accent">Tu prompt</div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node">Mensajes<br><small>acumulandose</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node teal">~13K restantes<br><small>&#9888; trigger</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node">Auto-compact<br><small>resumen + limpieza</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node accent">50K tokens<br><small>presupuesto nuevo</small></div>
+    </div>
+
+    <!-- Group chat simulation -->
+    <div class="chat-sim fade-in" id="chat-sim">
+      <div class="chat-sim-header">Chat entre componentes — Auto-compactacion</div>
+      <div class="chat-msg" data-delay="300">
+        <div class="chat-avatar" style="background:var(--teal)">C</div>
+        <div class="chat-bubble">
+          <div class="chat-name" style="color:var(--teal)">ContextManager</div>
+          Contexto al 93%. Solo quedan ~13K tokens de 200K. Activando auto-compact.
+        </div>
+      </div>
+      <div class="chat-msg" data-delay="900">
+        <div class="chat-avatar" style="background:#E67E22">A</div>
+        <div class="chat-bubble">
+          <div class="chat-name" style="color:#E67E22">Compactor</div>
+          Lanzando agente fork para resumir. Max 5 archivos, 5,000 tokens c/u en el resumen.
+        </div>
+      </div>
+      <div class="chat-msg" data-delay="1500">
+        <div class="chat-avatar" style="background:#E67E22">A</div>
+        <div class="chat-bubble">
+          <div class="chat-name" style="color:#E67E22">Compactor</div>
+          Listo. Reemplazada la historia vieja con resumen. Presupuesto post-compact: 50K tokens.
+        </div>
+      </div>
+      <div class="chat-msg" data-delay="2100">
+        <div class="chat-avatar" style="background:var(--accent)">M</div>
+        <div class="chat-bubble">
+          <div class="chat-name" style="color:var(--accent)">MicroCompact</div>
+          Ademas, limpie 12 resultados viejos de herramientas. Ahora dicen "[Old tool result cleared]".
+        </div>
+      </div>
+      <div class="chat-msg" data-delay="2700">
+        <div class="chat-avatar" style="background:#2ECC71">C</div>
+        <div class="chat-bubble">
+          <div class="chat-name" style="color:#2ECC71">Claude</div>
+          Contexto recuperado. Continuo trabajando con el resumen como contexto.
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-teal fade-in">
+      <div class="callout-label">Micro-compactacion</div>
+      <p style="margin:0;">Ademas de la auto-compactacion (que resume toda la conversacion), Claude Code hace <span class="term" data-def="La micro-compactacion reemplaza resultados viejos de herramientas con '[Old tool result content cleared]' para liberar espacio de contexto de forma incremental durante la sesion, sin necesidad de resumir toda la conversacion.">micro-compactacion</span>: reemplaza los resultados viejos de herramientas con <code>[Old tool result cleared]</code>. Asi libera espacio de forma incremental sin necesidad de comprimir toda la historia.</p>
+    </div>
+
+    <div class="callout fade-in">
+      <div class="callout-label">Limites de salida</div>
+      <p style="margin:0;">Claude Code maneja 4 niveles de output: <strong>32K</strong> tokens por defecto, <strong>8K</strong> en modo breve (capped), <strong>64K</strong> cuando escala automaticamente (escalated), y <strong>20K</strong> para el resumen de compactacion. El circuit breaker detiene la compactacion despues de 3 fallos consecutivos.</p>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz fade-in" id="quiz-context">
+      <div class="quiz-header">Escenario de diagnostico</div>
+      <div class="quiz-question">Llevas 2 horas en una sesion y de pronto Claude parece "olvidar" instrucciones que le diste al inicio. Que esta pasando?</div>
+      <div class="quiz-options">
+        <button class="quiz-option" onclick="checkQuiz('quiz-context', this, true)">La auto-compactacion se activo y reemplazo la conversacion vieja con un resumen. Las instrucciones originales ya no estan literalmente en el contexto — solo su resumen.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-context', this, false)">El modelo tiene un bug de memoria. Necesitas reiniciar la sesion para solucionarlo.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-context', this, false)">El system prompt se reseteo. Claude Code pierde sus instrucciones despues de cierto tiempo.</button>
+      </div>
+      <div class="quiz-feedback" id="quiz-context-feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== MODULE 6: MEMORY ==================== -->
+<section class="module" id="mod-6">
+  <div class="module-inner">
+    <span class="mod-tag fade-in">Modulo 6</span>
+    <h2 class="fade-in">Memoria y CLAUDE.md</h2>
+    <p class="subtitle fade-in">4 tipos de <span class="term" data-def="El sistema de memoria de Claude Code permite almacenar informacion persistente entre sesiones. Usa archivos markdown en ~/.claude/ con un indice MEMORY.md. Hay 4 tipos: user, feedback, project, y reference.">memoria</span> persistente y un archivo de configuracion que pesa mas que el resto.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
@@ -1023,353 +1240,137 @@ p { margin-bottom: var(--space-4); max-width: 65ch; }
         <rect x="34" y="15" width="10" height="8" rx="2" fill="#B8860B" opacity="0.3"/>
         <rect x="14" y="25" width="12" height="8" rx="2" fill="#B8860B" opacity="0.45"/>
         <rect x="28" y="25" width="14" height="8" rx="2" fill="#B8860B" opacity="0.35"/>
-        <text x="28" y="48" text-anchor="middle" font-size="7" fill="#B8860B" font-weight="600">207 + 184</text>
+        <text x="28" y="48" text-anchor="middle" font-size="7" fill="#B8860B" font-weight="600">MEMORY</text>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> La carta impresa con los 200 platillos. No es una receta ejecutable — es un catálogo descriptivo. Cada mañana, el chef la memoriza para saber qué puede ofrecer.</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El libro de recetas personales del chef — lo consulta al inicio de cada turno. Tiene notas sobre clientes ("al de la mesa 4 no le gusta el cilantro"), feedback del inspector ("usar guantes con el sushi"), y referencias a proveedores.</div>
     </div>
-
-    <p class="fade-in">El directorio <code style="font-family:var(--font-mono);background:var(--bg-warm-alt);padding:2px 6px;border-radius:4px;">reference_data/</code> es la bodega del sistema. Contiene <span class="term" data-def="Un 'snapshot' es una fotografía del estado de un sistema en un momento dado. Los snapshots de Claw Code capturan los nombres, responsabilidades y ubicaciones de los 207 comandos y 184 herramientas del sistema.">snapshots</span> — un catálogo exhaustivo de cada comando y herramienta disponible, con su nombre, responsabilidad y ubicación.</p>
 
     <div class="cards fade-in">
       <div class="card">
-        <span class="card-icon">📋</span>
-        <div class="card-title">commands_snapshot.json</div>
-        <div class="card-desc">207 entradas de comandos disponibles — add-dir, agents, autofix-pr, bughunter, y más.</div>
+        <span class="card-icon">&#128100;</span>
+        <div class="card-title">user</div>
+        <div class="card-desc">Info sobre el usuario: rol, preferencias, conocimientos. Ayuda a personalizar las respuestas y el nivel de detalle.</div>
       </div>
       <div class="card">
-        <span class="card-icon">🔧</span>
-        <div class="card-title">tools_snapshot.json</div>
-        <div class="card-desc">184 entradas de herramientas — AgentTool, BashTool, FileReadTool, agentMemory, MCP integrations, etc.</div>
+        <span class="card-icon">&#128172;</span>
+        <div class="card-title">feedback</div>
+        <div class="card-desc">Correcciones y confirmaciones del usuario. "No hagas X" o "Asi si, sigue haciendolo". Evita repetir errores entre sesiones.</div>
       </div>
       <div class="card">
-        <span class="card-icon">📁</span>
-        <div class="card-title">subsystems/*.json</div>
-        <div class="card-desc">Desglose por subsistema: skills, remote, voice, server, memdir, components, outputStyles, native_ts.</div>
+        <span class="card-icon">&#128204;</span>
+        <div class="card-title">project</div>
+        <div class="card-desc">Info sobre el trabajo en curso: plazos, decisiones, contexto de negocio. Se inyecta como parte del append prompt.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">&#128279;</span>
+        <div class="card-title">reference</div>
+        <div class="card-desc">Punteros a recursos externos: "los bugs estan en Linear proyecto INGEST", "el dashboard es grafana.internal/d/api-latency".</div>
       </div>
     </div>
 
-    <div class="code-block fade-in">
-      <span class="file-label">// Ejemplo de una entrada en tools_snapshot.json</span>
-<pre>{
-  <span class="fn">"name"</span>: <span class="st">"BashTool"</span>,
-  <span class="fn">"responsibility"</span>: <span class="st">"Ejecuta comandos de shell en el entorno del usuario"</span>,
-  <span class="fn">"source_hint"</span>: <span class="st">"tools/BashTool"</span>
-}</pre>
-    </div>
+    <div class="translation fade-in">
+      <div>
+        <div class="translation-label">Estructura de MEMORY.md</div>
+        <div class="translation-code">
+<pre><span class="cm"># ~/.claude/projects/mi-app/memory/</span>
 
-    <p class="fade-in">Estos archivos no ejecutan nada — son pura metadata. Cuando el sistema arranca, los carga en memoria como tuplas de <code style="font-family:var(--font-mono);background:var(--bg-warm-alt);padding:2px 6px;border-radius:4px;">PortingModule</code> y los usa para routing, auditoría de paridad, y generación de reportes.</p>
+<span class="cm">## MEMORY.md (indice, max 200 lineas)</span>
+- [Rol del usuario](user_role.md) — senior dev, Go
+- [No mockear DB](feedback_testing.md) — test real
+- [Freeze el jueves](project_freeze.md) — release
+
+<span class="cm">## user_role.md</span>
+---
+<span class="fn">name</span>: <span class="st">Rol del usuario</span>
+<span class="fn">type</span>: <span class="st">user</span>
+---
+Senior Go developer, nuevo en React.</pre>
+        </div>
+      </div>
+      <div>
+        <div class="translation-label">En espanol</div>
+        <div class="translation-english">
+          <div class="translation-line">&#128205; La memoria vive en archivos markdown:</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">MEMORY.md es solo un indice (punteros).</div>
+          <div class="translation-line">Cada memoria tiene su propio archivo</div>
+          <div class="translation-line">con frontmatter (nombre, tipo).</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">Se cargan al inicio de cada conversacion</div>
+          <div class="translation-line">y se inyectan en la capa 6 (append) del prompt.</div>
+          <div class="translation-line">&nbsp;</div>
+          <div class="translation-line">CLAUDE.md va en la capa 5 (default).</div>
+          <div class="translation-line">Por eso CLAUDE.md tiene mas peso.</div>
+        </div>
+      </div>
+    </div>
 
     <div class="callout callout-teal fade-in">
-      <div class="callout-label">🎯 Patrón de diseño: Catálogo estático</div>
-      <p style="margin:0;">Separar los datos de la lógica es como tener un directorio telefónico independiente de la central telefónica. Puedes actualizar el catálogo de comandos sin tocar el código que los ejecuta. Esto se llama <span class="term" data-def="El principio de 'separation of concerns' (separación de responsabilidades) es una regla fundamental del diseño de software: cada parte del sistema debe ocuparse de una sola cosa. Si mezclas datos con lógica, cada cambio se vuelve frágil y arriesgado.">separación de responsabilidades</span>, y es lo que hace al sistema fácil de mantener.</p>
+      <div class="callout-label">CLAUDE.md vs MEMORY.md</div>
+      <p style="margin:0;"><strong>CLAUDE.md</strong> se inyecta en la <strong>capa 5 (default)</strong> del system prompt — junto con las 7 secciones estaticas. <strong>MEMORY.md</strong> se inyecta en la <strong>capa 6 (append)</strong>. Esto significa que las instrucciones de CLAUDE.md tienen prioridad sobre la memoria. Usa CLAUDE.md para reglas permanentes del proyecto y la memoria para contexto cambiante.</p>
     </div>
   </div>
 </section>
 
-<!-- ==================== MODULE 5: TURN LOOP ==================== -->
-<section class="module" id="mod-5">
+<!-- ==================== MODULE 7: KAIROS ==================== -->
+<section class="module" id="mod-7">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 5</span>
-    <h2 class="fade-in">El ciclo de un prompt —<br>de punta a punta</h2>
-    <p class="subtitle fade-in">Tracemos el viaje completo cuando escribes: <code style="font-family:var(--font-mono);font-size:0.9rem;background:var(--bg-warm-alt);padding:2px 8px;border-radius:4px;">"Fix the bug in auth"</code></p>
+    <span class="mod-tag fade-in">Modulo 7</span>
+    <h2 class="fade-in">Modo proactivo<br>KAIROS</h2>
+    <p class="subtitle fade-in">El modo autonomo donde Claude trabaja sin input del usuario — con <span class="term" data-def="SleepTool es una herramienta obligatoria en modo KAIROS que fuerza a Claude a pausar entre acciones autonomas. Sin ella, el agente consumiria recursos infinitamente. Es como el descanso obligatorio entre turnos de un chef.">SleepTool</span> obligatorio.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
         <rect width="56" height="56" rx="12" fill="#FFF8F5"/>
-        <rect x="8" y="16" width="16" height="20" rx="3" fill="#D94F30" opacity="0.15" stroke="#D94F30" stroke-width="1"/>
-        <text x="16" y="29" text-anchor="middle" font-size="6" fill="#D94F30">📝</text>
-        <line x1="26" y1="26" x2="30" y2="26" stroke="#D94F30" stroke-width="1.5"/>
-        <polygon points="30,23 36,26 30,29" fill="#D94F30" opacity="0.6"/>
-        <circle cx="42" cy="26" r="6" fill="#2A9D8F" opacity="0.3" stroke="#2A9D8F" stroke-width="1"/>
-        <line x1="42" y1="34" x2="42" y2="38" stroke="#2A9D8F" stroke-width="1.5"/>
-        <polygon points="39,38 42,44 45,38" fill="#2A9D8F" opacity="0.6"/>
-        <rect x="34" y="44" width="16" height="6" rx="2" fill="#B8860B" opacity="0.3"/>
+        <!-- Night kitchen scene -->
+        <rect x="6" y="18" width="44" height="28" rx="4" fill="#1E1E2E" stroke="#2A9D8F" stroke-width="1"/>
+        <circle cx="28" cy="28" r="6" fill="#2A9D8F" opacity="0.4"/>
+        <text x="28" y="31" text-anchor="middle" font-size="7" fill="#2A9D8F" font-weight="700">Z</text>
+        <circle cx="18" cy="20" r="2" fill="#B8860B" opacity="0.5"/>
+        <circle cx="38" cy="20" r="2" fill="#B8860B" opacity="0.5"/>
+        <text x="28" y="52" text-anchor="middle" font-size="6" fill="#9B8E7D">modo nocturno</text>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Sigamos una comanda real: "Quiero el pescado con salsa verde." La comanda viaja de la barra → al chef → a la estación de pescados → pasa por sanidad → sale al plato → se archiva.</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El chef que cocina solo de noche cuando el restaurante cierra. Revisa el inventario, prepara la masa para manana, limpia las estaciones. Pero tiene un <strong>reloj obligatorio</strong> — cada 30 minutos DEBE descansar. Si no, lo sacan de la cocina.</div>
+    </div>
+
+    <p class="fade-in">KAIROS reemplaza el prompt default por uno de modo autonomo. En vez de esperar instrucciones del usuario, Claude ejecuta un <strong>tick loop</strong> continuo: revisa tareas, ejecuta, y duerme.</p>
+
+    <div class="steps fade-in">
+      <div class="step">
+        <div class="step-num" style="background:var(--teal);">1</div>
+        <div class="step-content"><strong>Check</strong> — Revisa la cola de tareas pendientes. Si hay algo por hacer, continua. Si no, llama a SleepTool.</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--teal);">2</div>
+        <div class="step-content"><strong>Execute</strong> — Ejecuta la siguiente accion usando las herramientas disponibles. Mismo sistema de permisos aplica.</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--teal);">3</div>
+        <div class="step-content"><strong>Sleep</strong> — Obligatorio. Claude DEBE llamar a SleepTool entre ciclos. Sin esta pausa, el sistema lo detiene.</div>
+      </div>
+      <div class="step">
+        <div class="step-num" style="background:var(--teal);">4</div>
+        <div class="step-content"><strong>Report</strong> — Documenta resultados y progreso. Luego vuelve al paso 1. El loop continua hasta completar o ser detenido.</div>
+      </div>
     </div>
 
     <div class="flow fade-in">
-      <div class="flow-node accent">Tu prompt</div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node">main.py<br><small>CLI parser</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node teal">PortRuntime<br><small>route_prompt()</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node">QueryEngine<br><small>submit_message()</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node accent">Resultado</div>
-    </div>
-
-    <!-- Group chat simulation -->
-    <div class="chat-sim fade-in" id="chat-sim">
-      <div class="chat-sim-header">💬 Chat entre componentes — "Fix the bug in auth"</div>
-      <div class="chat-msg" data-delay="300">
-        <div class="chat-avatar" style="background:var(--accent)">M</div>
-        <div class="chat-bubble">
-          <div class="chat-name" style="color:var(--accent)">main.py</div>
-          Recibí el prompt. Lo mando a <code>PortRuntime.bootstrap_session()</code>.
-        </div>
-      </div>
-      <div class="chat-msg" data-delay="900">
-        <div class="chat-avatar" style="background:var(--teal)">R</div>
-        <div class="chat-bubble">
-          <div class="chat-name" style="color:var(--teal)">PortRuntime</div>
-          Tokenizo → {fix, bug, auth}. Busco matches en 207 comandos y 184 tools…
-        </div>
-      </div>
-      <div class="chat-msg" data-delay="1500">
-        <div class="chat-avatar" style="background:#9B59B6">P</div>
-        <div class="chat-bubble">
-          <div class="chat-name" style="color:#9B59B6">Permissions</div>
-          ⚠️ "BashTool" matcheó pero está bloqueado — ejecución destructiva.
-        </div>
-      </div>
-      <div class="chat-msg" data-delay="2100">
-        <div class="chat-avatar" style="background:#E67E22">E</div>
-        <div class="chat-bubble">
-          <div class="chat-name" style="color:#E67E22">ExecutionRegistry</div>
-          Ejecuto los shims de los comandos y tools aprobados. Todo registrado.
-        </div>
-      </div>
-      <div class="chat-msg" data-delay="2700">
-        <div class="chat-avatar" style="background:#2ECC71">Q</div>
-        <div class="chat-bubble">
-          <div class="chat-name" style="color:#2ECC71">QueryEngine</div>
-          Mensaje procesado. Tokens: in=12 out=28. Budget OK. Sesión guardada.
-        </div>
-      </div>
-    </div>
-
-    <div class="translation fade-in">
-      <div>
-        <div class="translation-label">Código — query_engine.py</div>
-        <div class="translation-code">
-<pre><span class="kw">def</span> <span class="fn">submit_message</span>(self, prompt, ...):
-    <span class="kw">if</span> len(self.mutable_messages) >= \
-            self.config.max_turns:
-        <span class="kw">return</span> TurnResult(
-            stop_reason=<span class="st">'max_turns_reached'</span>)
-
-    projected_usage = self.total_usage\
-        .add_turn(prompt, output)
-    <span class="kw">if</span> projected_usage > max_budget:
-        stop_reason = <span class="st">'max_budget_reached'</span>
-
-    self.compact_messages_if_needed()</pre>
-        </div>
-      </div>
-      <div>
-        <div class="translation-label">En español</div>
-        <div class="translation-english">
-          <div class="translation-line">📍 Cuando llega un mensaje al motor:</div>
-          <div class="translation-line">Primero revisa: ¿ya se alcanzó el límite de turnos?</div>
-          <div class="translation-line">Si sí → para inmediatamente.</div>
-          <div class="translation-line">&nbsp;</div>
-          <div class="translation-line">Luego calcula cuántos tokens costó</div>
-          <div class="translation-line">esta ida y vuelta.</div>
-          <div class="translation-line">Si se pasó del presupuesto → frena.</div>
-          <div class="translation-line">&nbsp;</div>
-          <div class="translation-line">Finalmente, si la conversación es muy larga,</div>
-          <div class="translation-line">recorta los mensajes viejos para liberar espacio.</div>
-        </div>
-      </div>
+      <div class="flow-node teal">Tarea creada</div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node">KAIROS pickup</div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node accent">Execute</div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node">SleepTool</div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node teal">Check again</div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node accent">Complete</div>
     </div>
 
     <div class="callout fade-in">
-      <div class="callout-label">💡 Concepto: Gestión de contexto</div>
-      <p style="margin:0;">Un <span class="term" data-def="El 'context window' (ventana de contexto) es la cantidad de texto que un modelo de IA puede 'ver' al mismo tiempo. Es como la memoria de trabajo humana — si la conversación es muy larga, las partes viejas se 'olvidan' (se compactan o eliminan).">context window</span> de un LLM no es infinito. El QueryEngine actúa como un bibliotecario que retira libros viejos del escritorio cuando ya no caben. Sin esta compactación, las conversaciones largas fallarían o se volverían incoherentes.</p>
-    </div>
-
-    <!-- QUIZ -->
-    <div class="quiz fade-in" id="quiz-1">
-      <div class="quiz-header">🧪 Pon a prueba lo que aprendiste</div>
-      <div class="quiz-question">Un usuario reporta que su conversación con el agente se detuvo abruptamente con "max_budget_reached" después de 5 turnos. ¿Qué está pasando?</div>
-      <div class="quiz-options">
-        <button class="quiz-option" onclick="checkQuiz('quiz-1', this, false)">El servidor se quedó sin memoria RAM y cerró la conexión.</button>
-        <button class="quiz-option" onclick="checkQuiz('quiz-1', this, true)">El QueryEngine calculó que la suma de tokens de entrada + salida excedió el presupuesto máximo configurado (2,000 tokens por defecto).</button>
-        <button class="quiz-option" onclick="checkQuiz('quiz-1', this, false)">El prompt del usuario contenía palabras prohibidas que activaron el sistema de permisos.</button>
-      </div>
-      <div class="quiz-feedback" id="quiz-1-feedback"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== MODULE 6: PERMISOS ==================== -->
-<section class="module" id="mod-6">
-  <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 6</span>
-    <h2 class="fade-in">El sistema de permisos —<br>el guardia de seguridad</h2>
-    <p class="subtitle fade-in">No todas las herramientas son seguras. El <span class="term" data-def="Un 'permission context' (contexto de permisos) es un objeto que lleva la lista de herramientas prohibidas. Antes de ejecutar cualquier tool, el sistema lo consulta — como un guardia de seguridad que revisa tu credencial antes de dejarte pasar.">ToolPermissionContext</span> decide quién pasa y quién no.</p>
-
-    <div class="restaurant-hook fade-in">
-      <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-        <rect width="56" height="56" rx="12" fill="#FCF5FF"/>
-        <circle cx="28" cy="22" r="8" fill="#9B59B6" opacity="0.2" stroke="#9B59B6" stroke-width="1.5"/>
-        <text x="28" y="25" text-anchor="middle" font-size="8" fill="#9B59B6" font-weight="700">✋</text>
-        <rect x="14" y="34" width="28" height="14" rx="3" fill="#9B59B6" opacity="0.1" stroke="#9B59B6" stroke-width="1"/>
-        <line x1="18" y1="38" x2="38" y2="38" stroke="#9B59B6" stroke-width="0.8" opacity="0.5"/>
-        <line x1="18" y1="42" x2="32" y2="42" stroke="#9B59B6" stroke-width="0.8" opacity="0.5"/>
-        <text x="40" y="44" font-size="7" fill="#D94F30">✗</text>
-      </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El inspector de sanidad con su portapapeles. Tiene dos listas: ingredientes exactos prohibidos (<em>"fugu"</em>) y categorías enteras vetadas (<em>"todo lo crudo"</em> si no hay certificación). Si matchea, el platillo no sale.</div>
-    </div>
-
-    <p class="fade-in">Imagina un aeropuerto. No importa que tengas boleto — si tu nombre aparece en la lista de no-vuelo, no subes al avión. El sistema de permisos funciona igual: tiene dos listas negras que se revisan antes de ejecutar cualquier herramienta.</p>
-
-    <div class="cards fade-in">
-      <div class="card">
-        <span class="card-icon">🚫</span>
-        <div class="card-title">deny_names</div>
-        <div class="card-desc">Lista de nombres exactos bloqueados. Si la herramienta se llama exactamente "BashTool", no pasa. Como una lista VIP inversa — si estás en ella, estás fuera.</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">🔒</span>
-        <div class="card-title">deny_prefixes</div>
-        <div class="card-desc">Lista de prefijos bloqueados. Si una herramienta empieza con "mcp_dangerous_", se bloquea automáticamente. Como un filtro de correo que bloquea todo lo que viene de cierto dominio.</div>
-      </div>
-    </div>
-
-    <div class="translation fade-in">
-      <div>
-        <div class="translation-label">Código — permissions.py</div>
-        <div class="translation-code">
-<pre><span class="dc">@dataclass</span>(frozen=<span class="kw">True</span>)
-<span class="kw">class</span> <span class="cl">ToolPermissionContext</span>:
-    deny_names: <span class="cl">frozenset</span>[<span class="cl">str</span>]
-    deny_prefixes: <span class="kw">tuple</span>[<span class="cl">str</span>, ...]
-
-    <span class="kw">def</span> <span class="fn">blocks</span>(self, tool_name):
-        lowered = tool_name.lower()
-        <span class="kw">return</span> (
-            lowered <span class="kw">in</span> self.deny_names
-            <span class="kw">or</span> <span class="kw">any</span>(
-                lowered.startswith(p)
-                <span class="kw">for</span> p <span class="kw">in</span> self.deny_prefixes
-            )
-        )</pre>
-        </div>
-      </div>
-      <div>
-        <div class="translation-label">En español</div>
-        <div class="translation-english">
-          <div class="translation-line">📍 Una ficha de seguridad inmutable con:</div>
-          <div class="translation-line">→ un conjunto de nombres exactos prohibidos</div>
-          <div class="translation-line">→ una lista de prefijos prohibidos</div>
-          <div class="translation-line">&nbsp;</div>
-          <div class="translation-line">La función "¿lo bloqueo?":</div>
-          <div class="translation-line">convierte el nombre a minúsculas</div>
-          <div class="translation-line">y revisa dos cosas:</div>
-          <div class="translation-line">① ¿está el nombre exacto en la lista negra?</div>
-          <div class="translation-line">② ¿empieza con alguno de los prefijos prohibidos?</div>
-          <div class="translation-line">Si cualquiera es sí → bloqueado.</div>
-        </div>
-      </div>
-    </div>
-
-    <p class="fade-in">¿Y dónde se usa esto? En el <code style="font-family:var(--font-mono);background:var(--bg-warm-alt);padding:2px 6px;border-radius:4px;">PortRuntime</code>, justo antes de ejecutar. Mira cómo el runtime revisa herramientas peligrosas:</p>
-
-    <div class="code-block fade-in">
-      <span class="file-label">// runtime.py — Inferencia automática de denegaciones</span>
-<pre><span class="kw">def</span> <span class="fn">_infer_permission_denials</span>(self, matches):
-    denials = []
-    <span class="kw">for</span> match <span class="kw">in</span> matches:
-        <span class="kw">if</span> match.kind == <span class="st">'tool'</span> \
-           <span class="kw">and</span> <span class="st">'bash'</span> <span class="kw">in</span> match.name.lower():
-            denials.append(PermissionDenial(
-                tool_name=match.name,
-                reason=<span class="st">'destructive shell execution remains gated'</span>
-            ))
-    <span class="kw">return</span> denials</pre>
-    </div>
-
-    <div class="callout fade-in">
-      <div class="callout-label">💡 Patrón: Defense in depth</div>
-      <p style="margin:0;">El sistema tiene <em>dos</em> capas de defensa: el <span class="term" data-def="'Defense in depth' (defensa en profundidad) es un principio de seguridad donde múltiples capas protegen el sistema. Si una falla, la siguiente aún te cubre. Como un castillo con foso, muralla y torre del homenaje — no dependes de una sola barrera.">ToolPermissionContext</span> configurable por el usuario (deny_names/deny_prefixes) y la inferencia automática del runtime que bloquea bash sin importar qué. No confías en una sola barrera — como un edificio que tiene tanto cerradura eléctrica como guardia humano.</p>
-    </div>
-
-    <!-- QUIZ -->
-    <div class="quiz fade-in" id="quiz-perms">
-      <div class="quiz-header">🧪 Escenario de seguridad</div>
-      <div class="quiz-question">Configuraste <code>deny_prefixes = ["mcp_"]</code> para bloquear todas las integraciones MCP. Un usuario ejecuta un prompt que matchea con "mcp_slack_send". ¿Qué pasa?</div>
-      <div class="quiz-options">
-        <button class="quiz-option" onclick="checkQuiz('quiz-perms', this, true)">El ToolPermissionContext detecta que "mcp_slack_send" empieza con "mcp_" y la bloquea antes de que llegue al ExecutionRegistry.</button>
-        <button class="quiz-option" onclick="checkQuiz('quiz-perms', this, false)">El runtime ejecuta la herramienta normalmente porque deny_prefixes solo se revisa al inicio de la sesión, no en cada turno.</button>
-        <button class="quiz-option" onclick="checkQuiz('quiz-perms', this, false)">El QueryEngine detecta el prefijo y devuelve un error de "max_budget_reached" para detener la ejecución.</button>
-      </div>
-      <div class="quiz-feedback" id="quiz-perms-feedback"></div>
-    </div>
-  </div>
-</section>
-
-<!-- ==================== MODULE 7: RUST PORT ==================== -->
-<section class="module" id="mod-7">
-  <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 7</span>
-    <h2 class="fade-in">El port a Rust —<br>el motor nuevo</h2>
-    <p class="subtitle fade-in">De prototipo Python a sistema de producción con <span class="term" data-def="Un 'workspace' en Rust (usando Cargo) es una forma de organizar un proyecto grande en sub-proyectos independientes llamados 'crates'. Cada crate se compila por separado pero comparten dependencias. Piensa en un edificio con departamentos independientes que comparten servicios comunes.">workspace de crates</span>.</p>
-
-    <div class="restaurant-hook fade-in">
-      <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
-        <rect width="56" height="56" rx="12" fill="#FFF8F5"/>
-        <!-- Food truck (old) -->
-        <rect x="6" y="24" width="18" height="14" rx="2" fill="#D94F30" opacity="0.2" stroke="#D94F30" stroke-width="1"/>
-        <circle cx="11" cy="40" r="3" fill="#D94F30" opacity="0.3"/>
-        <circle cx="19" cy="40" r="3" fill="#D94F30" opacity="0.3"/>
-        <text x="15" y="33" text-anchor="middle" font-size="5" fill="#D94F30">v1</text>
-        <!-- Arrow -->
-        <text x="28" y="34" text-anchor="middle" font-size="10" fill="#9B8E7D">→</text>
-        <!-- Industrial kitchen (new) -->
-        <rect x="34" y="18" width="18" height="24" rx="2" fill="#2A9D8F" opacity="0.15" stroke="#2A9D8F" stroke-width="1.5"/>
-        <rect x="36" y="22" width="14" height="4" rx="1" fill="#2A9D8F" opacity="0.3"/>
-        <rect x="36" y="28" width="14" height="4" rx="1" fill="#2A9D8F" opacity="0.3"/>
-        <rect x="36" y="34" width="14" height="4" rx="1" fill="#2A9D8F" opacity="0.3"/>
-        <text x="43" y="48" text-anchor="middle" font-size="5" fill="#2A9D8F" font-weight="600">v2 🦀</text>
-      </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> Empezaron con un <strong>food truck</strong> (Python — rápido de armar, funcional). Ahora están construyendo una <strong>cocina industrial de acero</strong> (Rust — imposible de contaminar, con certificaciones de seguridad integradas en la estructura).</div>
-    </div>
-
-    <p class="fade-in">El port a Rust no es una traducción línea por línea — es una versión optimizada con herramientas que Python no tiene: seguridad de memoria garantizada por el compilador, streaming SSE nativo, y un cliente OAuth completo.</p>
-
-    <div class="cards fade-in">
-      <div class="card">
-        <span class="card-icon">🔌</span>
-        <div class="card-title">crates/api</div>
-        <div class="card-desc">Cliente de la API de Anthropic con soporte de streaming SSE, manejo de errores tipado, y tipos fuertes para requests/responses.</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">⚙️</span>
-        <div class="card-title">crates/runtime</div>
-        <div class="card-desc">Sesiones, bootstrap, permisos, config, compact, prompt, bash, MCP (stdio + SSE), file_ops, OAuth, remote.</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">💻</span>
-        <div class="card-title">crates/rusty-claude-cli</div>
-        <div class="card-desc">El binario principal — lo que ejecutas en tu terminal. Un solo ejecutable sin dependencias externas.</div>
-      </div>
-      <div class="card">
-        <span class="card-icon">📦</span>
-        <div class="card-title">crates/commands + tools</div>
-        <div class="card-desc">Metadata compartida de comandos slash y herramientas built-in, separada de la lógica de ejecución.</div>
-      </div>
-    </div>
-
-    <div class="code-block fade-in">
-      <span class="file-label">// rust/Cargo.toml — Configuración del workspace</span>
-<pre>[workspace]
-members = [<span class="st">"crates/*"</span>]
-resolver = <span class="st">"2"</span>
-
-[workspace.lints.rust]
-<span class="fn">unsafe_code</span> = <span class="st">"forbid"</span>  <span class="cm">← sin código inseguro, nunca</span>
-
-[workspace.lints.clippy]
-<span class="fn">all</span> = { level = <span class="st">"warn"</span> }
-<span class="fn">pedantic</span> = { level = <span class="st">"warn"</span> } <span class="cm">← las reglas más estrictas</span></pre>
-    </div>
-
-    <div class="callout callout-teal fade-in">
-      <div class="callout-label">🎯 ¿Por qué Rust para un harness?</div>
-      <p style="margin:0;">Un harness de agente maneja ejecución de bash, lectura de archivos, y conexiones de red simultáneamente. En Python, un error de memoria puede corromper estado silenciosamente. En Rust, el compilador te <em>obliga</em> a manejar cada caso posible <em>antes</em> de que el código compile. Es como un inspector de obra que no te deja abrir el edificio hasta que cada conexión eléctrica esté certificada.</p>
+      <div class="callout-label">Por que SleepTool es obligatorio?</div>
+      <p style="margin:0;">Sin SleepTool, un agente autonomo podria consumir recursos infinitamente en un loop sin salida. Es un <strong>circuit breaker</strong> por diseno — fuerza pausas que permiten al sistema verificar que todo va bien, y al usuario intervenir si algo salio mal. Es como la ley que obliga a los pilotos a descansar entre vuelos.</p>
     </div>
   </div>
 </section>
@@ -1377,9 +1378,9 @@ resolver = <span class="st">"2"</span>
 <!-- ==================== MODULE 8: DEPENDENCY DIAGRAM ==================== -->
 <section class="module" id="mod-8">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 8</span>
+    <span class="mod-tag fade-in">Modulo 8</span>
     <h2 class="fade-in">Mapa de dependencias<br>interactivo</h2>
-    <p class="subtitle fade-in">Pasa el cursor sobre cualquier módulo para ver qué importa y quién depende de él.</p>
+    <p class="subtitle fade-in">Pasa el cursor sobre cualquier componente para ver como se conecta con los demas.</p>
 
     <div class="restaurant-hook fade-in">
       <svg class="restaurant-hook-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
@@ -1393,91 +1394,94 @@ resolver = <span class="st">"2"</span>
         <line x1="14" y1="37" x2="28" y2="41" stroke="#9B8E7D" stroke-width="1"/>
         <line x1="42" y1="37" x2="28" y2="41" stroke="#9B8E7D" stroke-width="1"/>
       </svg>
-      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El organigrama. ¿Quién reporta a quién? ¿Quién no puede trabajar sin quién? El menú impreso (models.py) es como el proveedor de uniformes: todos lo necesitan pero él no necesita a nadie.</div>
+      <div class="restaurant-hook-text"><strong>En el restaurante:</strong> El organigrama del restaurante. Quien reporta a quien? Quien no puede trabajar sin quien? El system prompt es como el manual de reglas: todos lo consultan pero el no depende de nadie.</div>
     </div>
 
     <div class="dep-diagram fade-in" id="dep-diagram">
       <svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-        <!-- Connection lines (drawn first, behind nodes) -->
+        <!-- Connection lines -->
         <g id="dep-lines" style="opacity:0.15;">
-          <!-- main.py connections -->
+          <!-- system_prompt connections -->
           <line x1="380" y1="60" x2="170" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="380" y1="60" x2="380" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="380" y1="60" x2="590" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="380" y1="60" x2="170" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="380" y1="60" x2="590" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
-          <!-- runtime.py connections -->
-          <line x1="170" y1="170" x2="380" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
+          <!-- tools connections -->
+          <line x1="170" y1="170" x2="590" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="170" y1="170" x2="170" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="170" y1="170" x2="380" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="170" y1="170" x2="590" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="170" y1="170" x2="380" y2="410" stroke="#9B8E7D" stroke-width="1.5"/>
-          <!-- query_engine connections -->
-          <line x1="380" y1="170" x2="170" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="380" y1="170" x2="380" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="380" y1="170" x2="590" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="380" y1="170" x2="380" y2="410" stroke="#9B8E7D" stroke-width="1.5"/>
           <!-- permissions connections -->
+          <line x1="380" y1="170" x2="170" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
+          <line x1="380" y1="170" x2="170" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
+          <!-- context connections -->
+          <line x1="590" y1="170" x2="590" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="590" y1="170" x2="380" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
-          <!-- commands connections -->
-          <line x1="170" y1="290" x2="380" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
+          <!-- memory connections -->
+          <line x1="170" y1="290" x2="380" y2="60" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="170" y1="290" x2="380" y2="410" stroke="#9B8E7D" stroke-width="1.5"/>
-          <!-- tools connections -->
-          <line x1="590" y1="290" x2="380" y2="290" stroke="#9B8E7D" stroke-width="1.5"/>
+          <!-- mcp connections -->
+          <line x1="380" y1="290" x2="170" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
+          <line x1="380" y1="290" x2="380" y2="60" stroke="#9B8E7D" stroke-width="1.5"/>
+          <!-- agents connections -->
+          <line x1="590" y1="290" x2="170" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
+          <line x1="590" y1="290" x2="380" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
           <line x1="590" y1="290" x2="590" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
-          <line x1="590" y1="290" x2="380" y2="410" stroke="#9B8E7D" stroke-width="1.5"/>
+          <!-- kairos connections -->
+          <line x1="380" y1="410" x2="170" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
+          <line x1="380" y1="410" x2="380" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
+          <line x1="380" y1="410" x2="590" y2="170" stroke="#9B8E7D" stroke-width="1.5"/>
         </g>
 
         <!-- Nodes -->
-        <g class="dep-node" data-mod="main" style="cursor:pointer;">
-          <rect x="300" y="30" width="160" height="52" rx="10" fill="#FAF6F1" stroke="#D94F30" stroke-width="2.5"/>
-          <text x="380" y="55" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#D94F30">main.py</text>
-          <text x="380" y="72" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">CLI entrypoint</text>
-        </g>
-
-        <g class="dep-node" data-mod="runtime" style="cursor:pointer;">
-          <rect x="80" y="140" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#2A9D8F" stroke-width="2.5"/>
-          <text x="170" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#2A9D8F">runtime.py</text>
-          <text x="170" y="182" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">Orchestrator</text>
-        </g>
-
-        <g class="dep-node" data-mod="query_engine" style="cursor:pointer;">
-          <rect x="290" y="140" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#2A9D8F" stroke-width="2.5"/>
-          <text x="380" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#2A9D8F">query_engine.py</text>
-          <text x="380" y="182" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">Turn loop</text>
-        </g>
-
-        <g class="dep-node" data-mod="permissions" style="cursor:pointer;">
-          <rect x="500" y="140" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#9B59B6" stroke-width="2.5"/>
-          <text x="590" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#9B59B6">permissions.py</text>
-          <text x="590" y="182" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">Security gate</text>
-        </g>
-
-        <g class="dep-node" data-mod="commands" style="cursor:pointer;">
-          <rect x="80" y="260" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#E67E22" stroke-width="2.5"/>
-          <text x="170" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#E67E22">commands.py</text>
-          <text x="170" y="302" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">207 commands</text>
-        </g>
-
-        <g class="dep-node" data-mod="models" style="cursor:pointer;">
-          <rect x="290" y="260" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#B8860B" stroke-width="2.5"/>
-          <text x="380" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#B8860B">models.py</text>
-          <text x="380" y="302" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">Dataclasses</text>
+        <g class="dep-node" data-mod="system_prompt" style="cursor:pointer;">
+          <rect x="290" y="30" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#D94F30" stroke-width="2.5"/>
+          <text x="380" y="55" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#D94F30">SystemPrompt</text>
+          <text x="380" y="72" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">6 capas de prioridad</text>
         </g>
 
         <g class="dep-node" data-mod="tools" style="cursor:pointer;">
-          <rect x="500" y="260" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#E67E22" stroke-width="2.5"/>
-          <text x="590" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#E67E22">tools.py</text>
-          <text x="590" y="302" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">184 tools</text>
+          <rect x="80" y="140" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#2A9D8F" stroke-width="2.5"/>
+          <text x="170" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#2A9D8F">Tools (45)</text>
+          <text x="170" y="182" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">9 categorias</text>
         </g>
 
-        <g class="dep-node" data-mod="reference_data" style="cursor:pointer;">
+        <g class="dep-node" data-mod="permissions" style="cursor:pointer;">
+          <rect x="290" y="140" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#9B59B6" stroke-width="2.5"/>
+          <text x="380" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#9B59B6">Permissions</text>
+          <text x="380" y="182" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">6 modos + YOLO</text>
+        </g>
+
+        <g class="dep-node" data-mod="context" style="cursor:pointer;">
+          <rect x="500" y="140" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#2A9D8F" stroke-width="2.5"/>
+          <text x="590" y="165" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#2A9D8F">ContextManager</text>
+          <text x="590" y="182" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">200K + compact</text>
+        </g>
+
+        <g class="dep-node" data-mod="memory" style="cursor:pointer;">
+          <rect x="80" y="260" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#E67E22" stroke-width="2.5"/>
+          <text x="170" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#E67E22">Memory</text>
+          <text x="170" y="302" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">CLAUDE.md + 4 tipos</text>
+        </g>
+
+        <g class="dep-node" data-mod="mcp" style="cursor:pointer;">
+          <rect x="290" y="260" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#E67E22" stroke-width="2.5"/>
+          <text x="380" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#E67E22">MCP Protocol</text>
+          <text x="380" y="302" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">Herramientas dinamicas</text>
+        </g>
+
+        <g class="dep-node" data-mod="agents" style="cursor:pointer;">
+          <rect x="500" y="260" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#B8860B" stroke-width="2.5"/>
+          <text x="590" y="285" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#B8860B">SubAgents</text>
+          <text x="590" y="302" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">6 tipos built-in</text>
+        </g>
+
+        <g class="dep-node" data-mod="kairos" style="cursor:pointer;">
           <rect x="290" y="380" width="180" height="52" rx="10" fill="#FAF6F1" stroke="#6C7086" stroke-width="2.5"/>
-          <text x="380" y="405" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#6C7086">reference_data/</text>
-          <text x="380" y="422" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">JSON snapshots</text>
+          <text x="380" y="405" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="13" font-weight="600" fill="#6C7086">KAIROS</text>
+          <text x="380" y="422" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">Modo autonomo</text>
         </g>
 
-        <!-- Info panel background -->
+        <!-- Info panel -->
         <rect id="dep-info-bg" x="180" y="455" width="400" height="50" rx="8" fill="#1E1E2E" opacity="0"/>
         <text id="dep-info-text" x="380" y="477" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="12" fill="#CDD6F4" opacity="0"></text>
         <text id="dep-info-text2" x="380" y="494" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#6C7086" opacity="0"></text>
@@ -1485,8 +1489,8 @@ resolver = <span class="st">"2"</span>
     </div>
 
     <div class="callout callout-teal fade-in">
-      <div class="callout-label">🎯 Lectura del diagrama</div>
-      <p style="margin:0;">Las líneas muestran quién importa a quién. Nota cómo <code style="font-family:var(--font-mono);font-size:0.85rem;">models.py</code> está en el centro inferior — <em>todos</em> dependen de él pero él no depende de nadie. Ese es el patrón ideal: las estructuras de datos son la base estable sobre la que todo se construye. Si quisieras cambiar cómo se almacena un <code style="font-family:var(--font-mono);font-size:0.85rem;">PortingModule</code>, solo tocas un archivo.</p>
+      <div class="callout-label">Lectura del diagrama</div>
+      <p style="margin:0;">Las lineas muestran quien depende de quien. Nota como <strong>SystemPrompt</strong> esta arriba — todos lo consultan pero el no depende de nadie. <strong>KAIROS</strong> esta abajo porque depende de Tools, Permissions y Context para funcionar. <strong>Memory</strong> alimenta al SystemPrompt (capa append) y a KAIROS.</p>
     </div>
   </div>
 </section>
@@ -1494,59 +1498,94 @@ resolver = <span class="st">"2"</span>
 <!-- ==================== MODULE 9: BIG PICTURE ==================== -->
 <section class="module" id="mod-9">
   <div class="module-inner">
-    <span class="mod-tag fade-in">Módulo 9</span>
-    <h2 class="fade-in">El cuadro completo</h2>
-    <p class="subtitle fade-in">Cómo encaja todo — y qué puedes hacer con este conocimiento.</p>
+    <span class="mod-tag fade-in">Modulo 9</span>
+    <h2 class="fade-in">Tips practicos y<br>el cuadro completo</h2>
+    <p class="subtitle fade-in">Como encaja todo — y que puedes hacer con este conocimiento.</p>
 
-    <p class="fade-in">Ya recorriste el codebase de punta a punta. Ahora veamos el mapa completo y cómo este conocimiento te hace un mejor operador de agentes de IA.</p>
+    <p class="fade-in">Ya recorriste la arquitectura de punta a punta. Ahora veamos el flujo completo y los tips para ser un mejor operador de Claude Code.</p>
 
     <div class="flow fade-in" style="flex-wrap:wrap;">
-      <div class="flow-node">reference_data/<br><small>📋 Snapshots JSON</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node">commands.py<br>tools.py<br><small>📦 Cargadores</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node teal">PortRuntime<br><small>🎯 Router + Orchestrator</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node accent">QueryEngine<br><small>⚡ Turn loop</small></div>
-      <span class="flow-arrow">→</span>
-      <div class="flow-node">session_store<br>transcript<br><small>💾 Persistencia</small></div>
+      <div class="flow-node">SystemPrompt<br><small>6 capas</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node teal">Tools (45)<br><small>9 categorias</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node accent">Permissions<br><small>6 modos + YOLO</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node teal">Context<br><small>200K + compact</small></div>
+      <span class="flow-arrow">&#8594;</span>
+      <div class="flow-node">Memory<br><small>CLAUDE.md + 4 tipos</small></div>
     </div>
 
-    <h3 class="fade-in" style="margin-top:var(--space-10);">Lo que aprendiste — aplicado</h3>
+    <h3 class="fade-in" style="margin-top:var(--space-10);">10 tips para dirigir mejor a Claude Code</h3>
 
-    <div class="cards fade-in">
+    <div class="cards fade-in" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
       <div class="card">
-        <span class="card-icon">🎯</span>
-        <div class="card-title">Dirigir agentes mejor</div>
-        <div class="card-desc">Ahora sabes que un prompt se tokeniza y se compara por coincidencia textual. Usar los nombres exactos de las herramientas ("BashTool", "FileReadTool") en tus instrucciones mejora el routing.</div>
+        <span class="card-icon">1</span>
+        <div class="card-title">Usa CLAUDE.md</div>
+        <div class="card-desc">Pon instrucciones permanentes del proyecto en CLAUDE.md — se inyecta en la capa 5 con mayor prioridad que la memoria.</div>
       </div>
       <div class="card">
-        <span class="card-icon">🐛</span>
-        <div class="card-title">Diagnosticar problemas</div>
-        <div class="card-desc">Si un agente se detiene, puede ser max_turns, max_budget, o un permission denial. Ahora puedes distinguir entre los tres y actuar diferente en cada caso.</div>
+        <span class="card-icon">2</span>
+        <div class="card-title">Nombra herramientas</div>
+        <div class="card-desc">Di "usa Read para leer el archivo" en vez de "lee el archivo". Las herramientas dedicadas son mas seguras que Bash.</div>
       </div>
       <div class="card">
-        <span class="card-icon">🏗️</span>
-        <div class="card-title">Diseñar sistemas propios</div>
-        <div class="card-desc">El patrón catálogo estático + runtime + query engine es replicable. Podrías construir tu propio harness para Tenazas con esta misma arquitectura.</div>
+        <span class="card-icon">3</span>
+        <div class="card-title">Entiende los modos</div>
+        <div class="card-desc">Empieza en "default", sube a "acceptEdits" cuando confies, usa "auto" solo si entiendes que YOLO bloquea.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">4</span>
+        <div class="card-title">Vigila el contexto</div>
+        <div class="card-desc">En sesiones largas, repite instrucciones clave. La auto-compactacion puede resumir tus instrucciones originales.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">5</span>
+        <div class="card-title">Usa sub-agentes</div>
+        <div class="card-desc">Para tareas paralelas, pide que lance Agent tools. Cada sub-agente tiene su propio contexto y puede trabajar en aislamiento.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">6</span>
+        <div class="card-title">Modo plan primero</div>
+        <div class="card-desc">Para cambios grandes, usa /plan antes de implementar. Modo plan restringe herramientas a solo lectura para revisar sin riesgo.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">7</span>
+        <div class="card-title">MCP para integraciones</div>
+        <div class="card-desc">Conecta servicios externos (Slack, GitHub, bases de datos) via MCP. Las herramientas se inyectan dinamicamente.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">8</span>
+        <div class="card-title">Memoria estrategica</div>
+        <div class="card-desc">Guarda solo lo que no se puede derivar del codigo. Preferencias, decisiones de negocio, feedback — no patrones de codigo.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">9</span>
+        <div class="card-title">Evita patrones bloqueados</div>
+        <div class="card-desc">En modo auto, python/node/sudo/curl estan siempre bloqueados. Si necesitas ejecutarlos, usa modo interactivo.</div>
+      </div>
+      <div class="card">
+        <span class="card-icon">10</span>
+        <div class="card-title">Diagnostica con arquitectura</div>
+        <div class="card-desc">Si algo falla, piensa en capas: es un problema de prompt? De permisos? De contexto agotado? De memoria desactualizada?</div>
       </div>
     </div>
 
     <!-- FINAL QUIZ -->
-    <div class="quiz fade-in" id="quiz-2">
-      <div class="quiz-header">🧪 Quiz final: Escenario de arquitectura</div>
-      <div class="quiz-question">Quieres agregar una herramienta nueva a Claw Code — un "DatabaseQueryTool" que ejecute consultas SQL. ¿Cuál sería la ruta correcta?</div>
+    <div class="quiz fade-in" id="quiz-final">
+      <div class="quiz-header">Quiz final: Escenario de arquitectura</div>
+      <div class="quiz-question">Un colega puso instrucciones importantes en MEMORY.md pero Claude parece ignorarlas cuando hay conflicto con otras instrucciones. Cual es la explicacion arquitectonica?</div>
       <div class="quiz-options">
-        <button class="quiz-option" onclick="checkQuiz('quiz-2', this, false)">Modificar runtime.py para agregar lógica SQL directamente en el método bootstrap_session().</button>
-        <button class="quiz-option" onclick="checkQuiz('quiz-2', this, true)">Agregar una entrada en tools_snapshot.json con name, responsibility y source_hint. El sistema la detectará automáticamente a través del cargador de tools.py.</button>
-        <button class="quiz-option" onclick="checkQuiz('quiz-2', this, false)">Crear un archivo SQL separado en reference_data/ y registrarlo en main.py como un nuevo subcommand del CLI.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-final', this, false)">MEMORY.md tiene un bug conocido que hace que se pierdan entradas despues de 200 lineas.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-final', this, true)">MEMORY.md se inyecta en la capa 6 (append) del system prompt, que tiene menor prioridad que CLAUDE.md (capa 5) y el prompt default. Si hay conflicto, las capas superiores ganan.</button>
+        <button class="quiz-option" onclick="checkQuiz('quiz-final', this, false)">La memoria se borra automaticamente al hacer auto-compactacion, asi que las instrucciones no persisten.</button>
       </div>
-      <div class="quiz-feedback" id="quiz-2-feedback"></div>
+      <div class="quiz-feedback" id="quiz-final-feedback"></div>
     </div>
 
     <div class="callout fade-in" style="margin-top:var(--space-10);">
-      <div class="callout-label">🔥 Para llevar</div>
-      <p style="margin:0;">Claw Code demuestra que un harness de agente no es magia — es ingeniería de sistemas con patrones conocidos: catálogos de datos, routers por token, loops de turno con presupuesto, y persistencia de sesión. Cualquiera que entienda estos patrones puede construir (o dirigir) agentes más efectivos.</p>
+      <div class="callout-label">Para llevar</div>
+      <p style="margin:0;">Claude Code no es magia — es ingenieria de sistemas con patrones claros: prompts en capas, herramientas especializadas, permisos multinivel, gestion de contexto con compactacion, memoria persistente, y un modo autonomo con circuit breakers. Entender estos patrones te convierte en un operador mas efectivo de cualquier agente de IA.</p>
     </div>
 
     <!-- ANIMATED FLOW SVG -->
@@ -1581,80 +1620,76 @@ resolver = <span class="st">"2"</span>
           <text x="52" y="76" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-size="11" font-weight="700" fill="#D94F30">Tu prompt</text>
           <text x="52" y="96" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#9B8E7D">"fix auth"</text>
         </g>
-        <!-- Line 1→2 -->
+        <!-- Line 1-2 -->
         <line class="anim-line al1" x1="100" y1="82" x2="134" y2="82" stroke="#D94F30" stroke-width="2"/>
         <polygon class="anim-node al1" points="130,77 140,82 130,87" fill="#D94F30"/>
 
-        <!-- Node 2: CLI / Barra -->
+        <!-- Node 2: System Prompt -->
         <g class="anim-node an2">
           <rect x="140" y="50" width="96" height="64" rx="10" fill="#1E1E2E" stroke="#D94F30" stroke-width="1.5" stroke-dasharray="4 2"/>
-          <text x="188" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" fill="#D94F30">main.py</text>
-          <text x="188" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">La barra</text>
-          <text x="188" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6C7086">CLI parser</text>
+          <text x="188" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#D94F30">SystemPrompt</text>
+          <text x="188" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">6 capas</text>
+          <text x="188" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6C7086">+ CLAUDE.md</text>
         </g>
-        <!-- Line 2→3 -->
+        <!-- Line 2-3 -->
         <line class="anim-line al2" x1="236" y1="82" x2="270" y2="82" stroke="#2A9D8F" stroke-width="2"/>
         <polygon class="anim-node al2" points="266,77 276,82 266,87" fill="#2A9D8F"/>
 
-        <!-- Node 3: Runtime / Cocina -->
+        <!-- Node 3: Tools + Permissions -->
         <g class="anim-node an3">
           <rect x="276" y="50" width="96" height="64" rx="10" fill="#1E1E2E" stroke="#2A9D8F" stroke-width="2"/>
-          <text x="324" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" fill="#2A9D8F">runtime</text>
-          <text x="324" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">La cocina</text>
-          <text x="324" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6C7086">route + exec</text>
+          <text x="324" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#2A9D8F">Tools</text>
+          <text x="324" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">45 herramientas</text>
+          <text x="324" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6C7086">+ permisos</text>
         </g>
-        <!-- Line 3→4 -->
+        <!-- Line 3-4 -->
         <line class="anim-line al3" x1="372" y1="82" x2="406" y2="82" stroke="#9B59B6" stroke-width="2"/>
         <polygon class="anim-node al3" points="402,77 412,82 402,87" fill="#9B59B6"/>
 
-        <!-- Node 4: Permisos / Inspector -->
+        <!-- Node 4: Context Manager -->
         <g class="anim-node an4">
           <rect x="412" y="50" width="96" height="64" rx="10" fill="#1E1E2E" stroke="#9B59B6" stroke-width="2"/>
-          <text x="460" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="600" fill="#9B59B6">permisos</text>
-          <text x="460" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Inspector</text>
+          <text x="460" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#9B59B6">Context</text>
+          <text x="460" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">200K tokens</text>
           <circle class="anim-pulse" cx="460" cy="106" r="5" fill="#2A9D8F" opacity="0.7"/>
-          <text x="460" y="109" text-anchor="middle" font-size="7" fill="white" font-weight="700">✓</text>
+          <text x="460" y="109" text-anchor="middle" font-size="7" fill="white" font-weight="700">&#10003;</text>
         </g>
-        <!-- Line 4→5 -->
+        <!-- Line 4-5 -->
         <line class="anim-line al4" x1="508" y1="82" x2="542" y2="82" stroke="#E67E22" stroke-width="2"/>
         <polygon class="anim-node al4" points="538,77 548,82 538,87" fill="#E67E22"/>
 
-        <!-- Node 5: Query Engine -->
+        <!-- Node 5: API Call -->
         <g class="anim-node an5">
           <rect x="548" y="50" width="96" height="64" rx="10" fill="#1E1E2E" stroke="#E67E22" stroke-width="2"/>
-          <text x="596" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#E67E22">query_eng</text>
-          <text x="596" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Turn loop</text>
-          <text x="596" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6C7086">budget ✓</text>
+          <text x="596" y="72" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#E67E22">API Call</text>
+          <text x="596" y="90" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#9B8E7D">Claude model</text>
+          <text x="596" y="104" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#6C7086">response</text>
         </g>
-        <!-- Line 5→6 (curves down to storage) -->
+        <!-- Line 5-6 -->
         <path class="anim-line al5" d="M596,114 L596,140 L460,140 L460,148" fill="none" stroke="#B8860B" stroke-width="1.5"/>
         <polygon class="anim-node al5" points="456,146 460,156 464,146" fill="#B8860B"/>
 
-        <!-- Node 6: Resultado + Archivo -->
+        <!-- Node 6: Memory -->
         <g class="anim-node an6">
           <rect x="400" y="152" width="120" height="40" rx="8" fill="#1E1E2E" stroke="#B8860B" stroke-width="1.5"/>
-          <text x="460" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#B8860B">session_store</text>
-          <text x="460" y="184" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9B8E7D">La bodega 💾</text>
+          <text x="460" y="170" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="600" fill="#B8860B">Memory</text>
+          <text x="460" y="184" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" fill="#9B8E7D">Persistencia</text>
         </g>
 
         <!-- Labels row -->
         <text x="360" y="16" text-anchor="middle" font-family="Bricolage Grotesque,sans-serif" font-size="12" font-weight="700" fill="#2C2418">El viaje completo de un prompt</text>
-        <text x="360" y="32" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">De tu teclado al resultado — y de vuelta al archivo</text>
+        <text x="360" y="32" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#9B8E7D">De tu teclado al modelo — y de vuelta a la memoria</text>
       </svg>
     </div>
 
-    <p class="fade-in" style="text-align:center;margin-top:var(--space-12);color:var(--text-muted);font-size:0.85rem;">
-      Repositorio analizado: <a href="https://github.com/instructkr/claw-code" style="color:var(--accent);">instructkr/claw-code</a> de Sigrid Jin.
-    </p>
-
     <div class="fade-in" style="margin-top:var(--space-8);padding:var(--space-6);background:var(--bg-warm-alt);border-radius:var(--radius);border:1px solid rgba(107,94,79,0.12);max-width:var(--max-content);">
       <p style="font-size:0.78rem;color:var(--text-muted);line-height:1.7;margin:0;">
-        <strong style="color:var(--text-secondary);">Aviso legal.</strong> Este curso es un material educativo independiente creado con fines exclusivamente didácticos. No se utilizó, reprodujo ni distribuyó código, material ni propiedad intelectual registrada de Anthropic ni de ningún otro tercero. Todo el contenido del curso —incluyendo textos, ilustraciones SVG, diagramas y ejemplos— fue elaborado de forma original. El repositorio <em>claw-code</em> analizado es un <em>clean-room rewrite</em> de patrones arquitectónicos de código abierto, y este curso describe su funcionamiento sin reproducir código propietario de ninguna fuente. Las marcas mencionadas pertenecen a sus respectivos titulares.
+        <strong style="color:var(--text-secondary);">Aviso legal.</strong> Este curso es un material educativo independiente creado con fines exclusivamente didacticos. No se utilizo, reprodujo ni distribuyo codigo, material ni propiedad intelectual registrada de Anthropic ni de ningun otro tercero. Todo el contenido del curso —incluyendo textos, ilustraciones SVG, diagramas y ejemplos— fue elaborado de forma original. El analisis se basa en documentacion publica, observacion del comportamiento del sistema, y fuentes educativas disponibles. Las marcas mencionadas pertenecen a sus respectivos titulares.
       </p>
     </div>
 
     <p class="fade-in" style="text-align:center;margin-top:var(--space-8);color:var(--text-secondary);font-size:0.88rem;">
-      Elaborado por <strong>Raúl Gabino</strong> · <a href="mailto:raugabino@gmail.com" style="color:var(--accent);">raugabino@gmail.com</a>
+      Elaborado por <strong>Raul Gabino</strong> · <a href="mailto:raugabino@gmail.com" style="color:var(--accent);">raugabino@gmail.com</a>
     </p>
   </div>
 </section>
@@ -1665,17 +1700,23 @@ resolver = <span class="st">"2"</span>
 
   // === GLOSSARY ===
   const GLOSSARY = {
-    'harness de agentes': 'Un "harness" (arnés) de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas y orquestando el flujo de trabajo. Sin harness, el modelo solo produce texto.',
-    'harness': 'Un "harness" (arnés) en el contexto de agentes de IA es el sistema que envuelve al modelo de lenguaje, conectándolo con herramientas externas (como bash, archivos, navegadores) y orquestando el flujo de trabajo.',
-    'Rust': 'Rust es un lenguaje de programación que prioriza la seguridad de memoria y el rendimiento. Es ideal para sistemas de alta confiabilidad. Cuando escuches "memory-safe", piensa en Rust.',
-    'runtime': 'El "runtime" es el ambiente de ejecución del sistema — el conjunto de procesos que arranca, configura el entorno, carga las herramientas disponibles, y luego gestiona la conversación turno por turno.',
-    'JSON': 'JSON (JavaScript Object Notation) es un formato de texto para almacenar datos estructurados. Piensa en él como una tabla de Excel pero en texto plano — con llaves { } para agrupar y corchetes [ ] para listas.',
-    'snapshot': 'Un "snapshot" es una fotografía del estado de un sistema en un momento dado. Los snapshots de Claw Code capturan los nombres, responsabilidades y ubicaciones de los 207 comandos y 184 herramientas del sistema.',
-    'dataclasses': 'Un "dataclass" en Python es una forma rápida de crear clases que solo almacenan datos. Piensa en ellas como fichas o formularios. "frozen=True" significa que una vez creada, la ficha no se puede modificar.',
-    'context window': 'El "context window" es la cantidad de texto que un modelo de IA puede "ver" al mismo tiempo. Es como la memoria de trabajo humana — si la conversación es muy larga, las partes viejas se compactan o eliminan.',
-    'separación de responsabilidades': 'El principio de "separation of concerns" es una regla fundamental: cada parte del sistema debe ocuparse de una sola cosa. Si mezclas datos con lógica, cada cambio se vuelve frágil y arriesgado.',
-    'workspace de crates': 'Un "workspace" en Rust es una forma de organizar un proyecto grande en sub-proyectos independientes llamados "crates". Cada crate se compila por separado pero comparten dependencias.',
-    'ToolPermissionContext': 'Un objeto que lleva la lista de herramientas prohibidas (por nombre exacto o por prefijo). Antes de ejecutar cualquier tool, el sistema lo consulta — como un guardia que revisa credenciales.',
+    'agente de codigo': 'Un agente de codigo es un sistema que envuelve a un modelo de lenguaje, conectandolo con herramientas externas (terminal, archivos, navegadores) y orquestando el flujo de trabajo. Sin el, el modelo solo produce texto.',
+    'system prompt': 'El system prompt es el conjunto de instrucciones que define el comportamiento de Claude Code. Tiene 6 capas de prioridad y 7 secciones estaticas que cubren desde la identidad del sistema hasta reglas de formato de salida.',
+    'cache boundary': 'El cache boundary es el punto en el system prompt donde se separa el contenido estatico (que se cachea entre llamadas) del contenido dinamico (que cambia en cada peticion). Las primeras 4 secciones se cachean; el resto es dinamico.',
+    'herramientas': 'Las herramientas (tools) son funciones estructuradas que Claude Code puede invocar para interactuar con tu sistema: leer archivos, ejecutar comandos, buscar en la web, lanzar sub-agentes. Cada una tiene un schema JSON que define sus parametros.',
+    'YOLO classifier': 'El YOLO classifier es un clasificador de IA de dos etapas que Claude Code usa en modo "auto" para decidir si una accion es segura sin preguntar al usuario. Stage 1: decision rapida (64 tokens max). Stage 2: solo si Stage 1 bloquea, razonamiento profundo (4096 tokens).',
+    'context window': 'El context window (ventana de contexto) es la cantidad de texto que Claude puede "ver" al mismo tiempo. Es como la memoria de trabajo — si la conversacion es muy larga, las partes viejas se compactan o eliminan.',
+    'auto-compactacion': 'La auto-compactacion se activa cuando quedan ~13K tokens en el context window. Un agente fork resume la conversacion vieja, reemplaza la historia con el resumen, y deja un presupuesto de 50K tokens post-compact.',
+    'micro-compactacion': 'La micro-compactacion reemplaza resultados viejos de herramientas con "[Old tool result content cleared]" para liberar espacio de contexto de forma incremental durante la sesion.',
+    'CLAUDE.md': 'CLAUDE.md es un archivo de configuracion por proyecto que se inyecta en la capa 5 (default) del system prompt. Tiene mas prioridad que la memoria regular (capa 6) porque esta mas arriba en la jerarquia.',
+    'MEMORY.md': 'MEMORY.md es el indice del sistema de memoria persistente. Contiene punteros a archivos de memoria individuales (user, feedback, project, reference) y se inyecta en la capa 6 (append) del system prompt.',
+    'KAIROS': 'KAIROS es el modo proactivo/autonomo de Claude Code donde el agente trabaja sin input del usuario, con un tick loop continuo y un SleepTool obligatorio para pausar entre acciones.',
+    'SleepTool': 'SleepTool es una herramienta obligatoria en modo KAIROS que fuerza a Claude a pausar entre acciones autonomas. Es un circuit breaker por diseno — sin ella, el agente consumiria recursos infinitamente.',
+    'MCP': 'MCP (Model Context Protocol) es un protocolo que permite conectar herramientas externas dinamicamente a Claude Code. Los servidores MCP exponen herramientas y recursos que se inyectan como tools adicionales.',
+    'modo auto': 'El modo "auto" de permisos usa el YOLO classifier para decidir automaticamente si una accion es segura o debe bloquearse. Tiene patrones hardcoded siempre bloqueados (python, node, sudo, etc.).',
+    'modo plan': 'El modo "plan" restringe las herramientas disponibles a solo lectura y busqueda. Ideal para revisar codigo y planificar cambios sin riesgo de modificar nada.',
+    'sub-agente': 'Un sub-agente es una instancia de Claude Code lanzada desde otra instancia. Cada sub-agente tiene su propio contexto y puede trabajar en paralelo o en aislamiento (worktree).',
+    'memoria': 'El sistema de memoria de Claude Code permite almacenar informacion persistente entre sesiones. Usa archivos markdown en ~/.claude/ con un indice MEMORY.md. Hay 4 tipos: user, feedback, project, y reference.',
   };
 
   // === TOOLTIP ===
@@ -1772,21 +1813,21 @@ resolver = <span class="st">"2"</span>
       btn.classList.add('correct');
       feedback.className = 'quiz-feedback show correct-fb';
       if (quizId === 'quiz-1') {
-        feedback.textContent = '¡Exacto! El QueryEngine tiene un presupuesto de tokens (max_budget_tokens = 2,000 por defecto). Cada turno acumula tokens de entrada y salida, y cuando la suma excede el presupuesto, el sistema detiene la conversación con "max_budget_reached". Esto protege contra costos desbocados.';
-      } else if (quizId === 'quiz-perms') {
-        feedback.textContent = '¡Correcto! El método blocks() convierte "mcp_slack_send" a minúsculas y revisa si empieza con "mcp_". Como sí, la herramienta se filtra ANTES de llegar a ejecución. La función filter_tools_by_permission_context() en tools.py hace este filtrado al armar el pool de herramientas disponibles.';
-      } else {
-        feedback.textContent = '¡Correcto! La arquitectura de catálogo estático significa que agregar una herramienta nueva es tan simple como agregar una entrada JSON. El cargador en tools.py la detecta automáticamente, el router la incluye en sus búsquedas, y el ExecutionRegistry la registra para ejecución — todo sin modificar la lógica central.';
+        feedback.textContent = 'Exacto! "python" esta en la lista de patrones SIEMPRE bloqueados (hardcoded). El YOLO classifier ni siquiera llega a evaluar — el patron se intercepta antes. Esto aplica tambien a node, sudo, curl, ssh y otros comandos potencialmente peligrosos. Es una capa de seguridad que no se puede desactivar en modo auto.';
+      } else if (quizId === 'quiz-context') {
+        feedback.textContent = 'Correcto! La auto-compactacion se activa al quedar ~13K tokens y reemplaza la conversacion vieja con un resumen. Si tus instrucciones originales eran muy detalladas, el resumen puede perder matices. Solucion: pon instrucciones criticas en CLAUDE.md (capa 5, no se compacta) o repitelas periodicamente en la conversacion.';
+      } else if (quizId === 'quiz-final') {
+        feedback.textContent = 'Correcto! El system prompt tiene 6 capas con prioridad descendente. MEMORY.md se inyecta en la capa 6 (append), la de menor prioridad. CLAUDE.md va en la capa 5 (default). Si hay conflicto, la capa superior gana. Solucion: pon las instrucciones criticas en CLAUDE.md del proyecto, no en la memoria.';
       }
     } else {
       btn.classList.add('wrong');
       feedback.className = 'quiz-feedback show wrong-fb';
       if (quizId === 'quiz-1') {
-        feedback.textContent = 'No exactamente. El sistema de permisos filtra herramientas peligrosas (como bash), pero no bloquea prompts. Y el "max_budget_reached" es un mecanismo del QueryEngine que cuenta tokens, no de memoria RAM. Revisa cómo submit_message() calcula projected_usage y lo compara contra max_budget_tokens.';
-      } else if (quizId === 'quiz-perms') {
-        feedback.textContent = 'No del todo. Los permisos se revisan cada vez que se arma el pool de herramientas (no solo al inicio), y el QueryEngine no tiene nada que ver con permisos — ese es el ToolPermissionContext. Revisa cómo blocks() compara deny_prefixes con startswith().';
-      } else {
-        feedback.textContent = 'No del todo. El principio de separación de responsabilidades significa que los datos (catálogo de herramientas) viven separados de la lógica (runtime, CLI). Modificar runtime.py o main.py para agregar una herramienta rompe esa separación. La ruta correcta es el archivo de datos: tools_snapshot.json.';
+        feedback.textContent = 'No exactamente. En modo auto, ciertos patrones estan hardcoded como SIEMPRE bloqueados — python, node, bash, sudo, curl, etc. El YOLO classifier solo evalua comandos que NO estan en esa lista negra. Para ejecutar python, necesitas cambiar a un modo que permita aprobacion manual (como "default").';
+      } else if (quizId === 'quiz-context') {
+        feedback.textContent = 'No del todo. El sistema no tiene bugs de memoria ni resetea el system prompt. Lo que pasa es que la auto-compactacion reemplazo tus mensajes viejos con un resumen comprimido. El system prompt (capas 1-6) sigue intacto — lo que se compacta es la historia de la conversacion.';
+      } else if (quizId === 'quiz-final') {
+        feedback.textContent = 'No del todo. MEMORY.md no tiene bugs ni se borra con la compactacion (la compactacion afecta la historia de chat, no el system prompt). El tema es de prioridad: MEMORY.md esta en la capa 6 (append) y CLAUDE.md en la capa 5 (default). Si ambas dicen cosas contradictorias, la capa 5 gana.';
       }
     }
   };
@@ -1833,14 +1874,14 @@ resolver = <span class="st">"2"</span>
 
   // === DEPENDENCY DIAGRAM ===
   const DEP_MAP = {
-    main:           { imports: ['runtime','query_engine','commands','tools','permissions','setup','bootstrap_graph','command_graph'], desc: 'Punto de entrada CLI — importa casi todo para exponer los subcomandos.' },
-    runtime:        { imports: ['commands','tools','query_engine','models','context','permissions','setup','execution_registry'], desc: 'El orquestador central — conecta routing, ejecución, y persistencia.' },
-    query_engine:   { imports: ['commands','tools','models','session_store','transcript','port_manifest'], desc: 'Motor de turnos — gestiona mensajes, presupuesto, y compactación.' },
-    permissions:    { imports: ['models'], desc: 'Gate de seguridad — deny_names + deny_prefixes. Mínimas dependencias.' },
-    commands:       { imports: ['models','reference_data'], desc: 'Carga y expone los 207 comandos desde el snapshot JSON.' },
-    tools:          { imports: ['models','permissions','reference_data'], desc: 'Carga los 184 tools, los filtra por permisos.' },
-    models:         { imports: [], desc: 'Dataclasses puros — sin dependencias externas. La base de todo.' },
-    reference_data: { imports: [], desc: 'Archivos JSON estáticos — catálogo de comandos y herramientas disponibles.' },
+    system_prompt: { imports: ['tools','permissions','context','agents'], desc: 'Define el comportamiento completo de Claude Code — 6 capas, 7 secciones, CLAUDE.md.' },
+    tools:         { imports: ['permissions','memory','mcp'], desc: '45 herramientas en 9 categorias — Files, Shell, Web, Agents, Planning, Tasks, Scheduling, UI, MCP.' },
+    permissions:   { imports: ['tools','memory'], desc: '6 modos de permisos + YOLO classifier de 2 etapas. Gate de seguridad para toda operacion.' },
+    context:       { imports: ['agents','mcp'], desc: '200K tokens de context window. Auto-compactacion a ~13K restantes, micro-compactacion inline.' },
+    memory:        { imports: ['system_prompt','kairos'], desc: 'CLAUDE.md (capa 5) + 4 tipos de memoria (capa 6). Persistente entre sesiones.' },
+    mcp:           { imports: ['tools','system_prompt'], desc: 'Model Context Protocol — herramientas dinamicas de servidores externos (Slack, GitHub, DBs).' },
+    agents:        { imports: ['tools','permissions','context'], desc: '6 tipos de sub-agentes built-in. Cada uno con su propio contexto y herramientas.' },
+    kairos:        { imports: ['tools','permissions','context'], desc: 'Modo autonomo con tick loop. SleepTool obligatorio como circuit breaker.' },
   };
 
   const depNodes = document.querySelectorAll('.dep-node');
@@ -1874,7 +1915,7 @@ resolver = <span class="st">"2"</span>
         depInfoText.setAttribute('opacity', '1');
         depInfoText2.setAttribute('opacity', '1');
         depInfoText.textContent = info.desc;
-        depInfoText2.textContent = info.imports.length ? 'Importa: ' + info.imports.join(', ') : 'Sin dependencias internas';
+        depInfoText2.textContent = info.imports.length ? 'Depende de: ' + info.imports.join(', ') : 'Sin dependencias internas';
       });
 
       node.addEventListener('mouseleave', function() {

@@ -1,33 +1,37 @@
-# Claw Code — Curso Interactivo
+# Claude Code — Curso Interactivo
 
-Un curso interactivo de una sola página que explica cómo funciona [claw-code](https://github.com/instructkr/claw-code) por dentro — el clean-room rewrite en Python (y Rust) de los patrones arquitectónicos del harness de Claude Code.
+Un curso interactivo de una sola pagina que explica como funciona **Claude Code** por dentro — el agente de codigo de Anthropic con ~512,000 lineas de TypeScript, 45 herramientas, 6 tipos de agentes y un sistema de permisos multinivel.
 
-## ¿Para quién es?
+## Para quien es?
 
-Para cualquier persona interesada en entender cómo funciona un **harness de agentes de IA** — la maquinaria invisible que conecta modelos de lenguaje con herramientas externas, orquesta tareas y gestiona el contexto de runtime.
+Para cualquier persona interesada en entender como funciona un **agente de codigo de IA** — la maquinaria invisible que conecta modelos de lenguaje con herramientas externas, orquesta tareas y gestiona el contexto.
 
-No se requiere conocimiento técnico previo. Cada concepto se explica con una metáfora accesible (un restaurante con 200 platillos) antes de mostrar el código real.
+No se requiere conocimiento tecnico previo. Cada concepto se explica con una metafora accesible (un restaurante con 200 platillos) antes de mostrar los detalles tecnicos.
 
 ## Contenido
 
-- **10 módulos** con scroll-snap y navegación por teclado
-- **Traducciones código ↔ español** lado a lado
-- **Quizzes interactivos** que prueban aplicación, no memorización
-- **Tooltips** en cada término técnico
+- **11 modulos** con scroll-snap y navegacion por teclado
+- **System prompt**: 6 capas de prioridad, 7 secciones estaticas, cache boundary
+- **45 herramientas** en 9 categorias (Files, Shell, Web, Agents, Planning, Tasks, Scheduling, UI, MCP)
+- **6 modos de permisos** + YOLO classifier de 2 etapas
+- **Contexto y compactacion**: 200K tokens, auto-compact, micro-compaction
+- **Memoria**: 4 tipos persistentes, CLAUDE.md vs MEMORY.md
+- **Modo KAIROS**: modo autonomo con tick loop y SleepTool
+- **Traducciones codigo - espanol** lado a lado
+- **Quizzes interactivos** que prueban aplicacion, no memorizacion
+- **Tooltips** en cada termino tecnico
 - **Diagrama interactivo de dependencias** (hover para explorar)
-- **Animación SVG** del flujo completo de un prompt
-- **Storytelling** con metáfora del restaurante como hilo conductor
+- **Animacion SVG** del flujo completo de un prompt
+- **Storytelling** con metafora del restaurante como hilo conductor
 
-## Cómo verlo
+## Como verlo
 
-Abre `index.html` en cualquier navegador. No requiere servidor, dependencias ni instalación.
-
-O visítalo desplegado en: _(agrega tu URL de Vercel aquí)_
+Abre `index.html` en cualquier navegador. No requiere servidor, dependencias ni instalacion.
 
 ## Aviso legal
 
-Este curso es un material educativo independiente creado con fines exclusivamente didácticos. No se utilizó, reprodujo ni distribuyó código, material ni propiedad intelectual registrada de Anthropic ni de ningún otro tercero. El repositorio *claw-code* analizado es un *clean-room rewrite* de patrones arquitectónicos de código abierto.
+Este curso es un material educativo independiente creado con fines exclusivamente didacticos. No se utilizo, reprodujo ni distribuyo codigo, material ni propiedad intelectual registrada de Anthropic ni de ningun otro tercero. El analisis se basa en documentacion publica, observacion del comportamiento del sistema, y fuentes educativas disponibles. Las marcas mencionadas pertenecen a sus respectivos titulares.
 
 ## Contacto
 
-Elaborado por **Raúl Gabino** · [raugabino@gmail.com](mailto:raugabino@gmail.com)
+Elaborado por **Raul Gabino** · [raugabino@gmail.com](mailto:raugabino@gmail.com)
